@@ -177,6 +177,33 @@ CCalculatorTreeBundle/CCalculatorTree.cpp.s:
 	$(MAKE) -f CMakeFiles/ZMPO3.dir/build.make CMakeFiles/ZMPO3.dir/CCalculatorTreeBundle/CCalculatorTree.cpp.s
 .PHONY : CCalculatorTreeBundle/CCalculatorTree.cpp.s
 
+CCalculatorTreeBundle/CCalculatorTreeInterface.o: CCalculatorTreeBundle/CCalculatorTreeInterface.cpp.o
+
+.PHONY : CCalculatorTreeBundle/CCalculatorTreeInterface.o
+
+# target to build an object file
+CCalculatorTreeBundle/CCalculatorTreeInterface.cpp.o:
+	$(MAKE) -f CMakeFiles/ZMPO3.dir/build.make CMakeFiles/ZMPO3.dir/CCalculatorTreeBundle/CCalculatorTreeInterface.cpp.o
+.PHONY : CCalculatorTreeBundle/CCalculatorTreeInterface.cpp.o
+
+CCalculatorTreeBundle/CCalculatorTreeInterface.i: CCalculatorTreeBundle/CCalculatorTreeInterface.cpp.i
+
+.PHONY : CCalculatorTreeBundle/CCalculatorTreeInterface.i
+
+# target to preprocess a source file
+CCalculatorTreeBundle/CCalculatorTreeInterface.cpp.i:
+	$(MAKE) -f CMakeFiles/ZMPO3.dir/build.make CMakeFiles/ZMPO3.dir/CCalculatorTreeBundle/CCalculatorTreeInterface.cpp.i
+.PHONY : CCalculatorTreeBundle/CCalculatorTreeInterface.cpp.i
+
+CCalculatorTreeBundle/CCalculatorTreeInterface.s: CCalculatorTreeBundle/CCalculatorTreeInterface.cpp.s
+
+.PHONY : CCalculatorTreeBundle/CCalculatorTreeInterface.s
+
+# target to generate assembly for a file
+CCalculatorTreeBundle/CCalculatorTreeInterface.cpp.s:
+	$(MAKE) -f CMakeFiles/ZMPO3.dir/build.make CMakeFiles/ZMPO3.dir/CCalculatorTreeBundle/CCalculatorTreeInterface.cpp.s
+.PHONY : CCalculatorTreeBundle/CCalculatorTreeInterface.cpp.s
+
 CCalculatorTreeBundle/CNode.o: CCalculatorTreeBundle/CNode.cpp.o
 
 .PHONY : CCalculatorTreeBundle/CNode.o
@@ -257,33 +284,6 @@ CHelpersBundle/CStringHelper.s: CHelpersBundle/CStringHelper.cpp.s
 CHelpersBundle/CStringHelper.cpp.s:
 	$(MAKE) -f CMakeFiles/ZMPO3.dir/build.make CMakeFiles/ZMPO3.dir/CHelpersBundle/CStringHelper.cpp.s
 .PHONY : CHelpersBundle/CStringHelper.cpp.s
-
-CHelpersBundle/CTextInterface.o: CHelpersBundle/CTextInterface.cpp.o
-
-.PHONY : CHelpersBundle/CTextInterface.o
-
-# target to build an object file
-CHelpersBundle/CTextInterface.cpp.o:
-	$(MAKE) -f CMakeFiles/ZMPO3.dir/build.make CMakeFiles/ZMPO3.dir/CHelpersBundle/CTextInterface.cpp.o
-.PHONY : CHelpersBundle/CTextInterface.cpp.o
-
-CHelpersBundle/CTextInterface.i: CHelpersBundle/CTextInterface.cpp.i
-
-.PHONY : CHelpersBundle/CTextInterface.i
-
-# target to preprocess a source file
-CHelpersBundle/CTextInterface.cpp.i:
-	$(MAKE) -f CMakeFiles/ZMPO3.dir/build.make CMakeFiles/ZMPO3.dir/CHelpersBundle/CTextInterface.cpp.i
-.PHONY : CHelpersBundle/CTextInterface.cpp.i
-
-CHelpersBundle/CTextInterface.s: CHelpersBundle/CTextInterface.cpp.s
-
-.PHONY : CHelpersBundle/CTextInterface.s
-
-# target to generate assembly for a file
-CHelpersBundle/CTextInterface.cpp.s:
-	$(MAKE) -f CMakeFiles/ZMPO3.dir/build.make CMakeFiles/ZMPO3.dir/CHelpersBundle/CTextInterface.cpp.s
-.PHONY : CHelpersBundle/CTextInterface.cpp.s
 
 CHelpersBundle/HCommands.o: CHelpersBundle/HCommands.cpp.o
 
@@ -381,6 +381,9 @@ help:
 	@echo "... CCalculatorTreeBundle/CCalculatorTree.o"
 	@echo "... CCalculatorTreeBundle/CCalculatorTree.i"
 	@echo "... CCalculatorTreeBundle/CCalculatorTree.s"
+	@echo "... CCalculatorTreeBundle/CCalculatorTreeInterface.o"
+	@echo "... CCalculatorTreeBundle/CCalculatorTreeInterface.i"
+	@echo "... CCalculatorTreeBundle/CCalculatorTreeInterface.s"
 	@echo "... CCalculatorTreeBundle/CNode.o"
 	@echo "... CCalculatorTreeBundle/CNode.i"
 	@echo "... CCalculatorTreeBundle/CNode.s"
@@ -390,9 +393,6 @@ help:
 	@echo "... CHelpersBundle/CStringHelper.o"
 	@echo "... CHelpersBundle/CStringHelper.i"
 	@echo "... CHelpersBundle/CStringHelper.s"
-	@echo "... CHelpersBundle/CTextInterface.o"
-	@echo "... CHelpersBundle/CTextInterface.i"
-	@echo "... CHelpersBundle/CTextInterface.s"
 	@echo "... CHelpersBundle/HCommands.o"
 	@echo "... CHelpersBundle/HCommands.i"
 	@echo "... CHelpersBundle/HCommands.s"

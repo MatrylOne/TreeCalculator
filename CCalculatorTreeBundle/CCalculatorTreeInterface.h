@@ -7,15 +7,15 @@
 
 
 #include <string>
-#include "CStringHelper.h"
-#include "HErrors.h"
-#include "../CCalculatorTreeBundle/CCalculatorMenager.h"
+#include "../CHelpersBundle/CStringHelper.h"
+#include "../CHelpersBundle/HErrors.h"
+#include "CCalculatorMenager.h"
 
-class CTextInterface {
+class CCalculatorTreeInterface {
 public:
-    CTextInterface();
+    CCalculatorTreeInterface();
 
-    ~CTextInterface();
+    ~CCalculatorTreeInterface();
 
     void vBegin();
 

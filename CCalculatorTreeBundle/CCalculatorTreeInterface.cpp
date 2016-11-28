@@ -3,26 +3,26 @@
 //
 
 #include <vector>
-#include "CTextInterface.h"
-#include "HCommands.h"
-#include "HDefaults.h"
+#include "CCalculatorTreeInterface.h"
+#include "../CHelpersBundle/HCommands.h"
+#include "../CHelpersBundle/HDefaults.h"
 
 /////////////////////////////////
 //////////   Public   ///////////
 
 //######   Constructors #######//
-CTextInterface::CTextInterface() {
+CCalculatorTreeInterface::CCalculatorTreeInterface() {
     bContinue = true;
     this->cManager = new CCalculatorMenager();
 }
 
 //######  Destructors #######//
-CTextInterface::~CTextInterface() {
+CCalculatorTreeInterface::~CCalculatorTreeInterface() {
     delete cManager;
 }
 
 //######  Tools #######//
-void CTextInterface::vBegin() {
+void CCalculatorTreeInterface::vBegin() {
     bContinue = true;
     std::string sTextLine = "";
 
@@ -35,7 +35,7 @@ void CTextInterface::vBegin() {
     }
 }
 
-int CTextInterface::iRunCommand(std::string sCommand) {
+int CCalculatorTreeInterface::iRunCommand(std::string sCommand) {
     std::vector<std::string> vArgs = CStringHelper::vSliceString(sCommand);
     if (vArgs.size() > 0) {
 
@@ -138,13 +138,13 @@ int CTextInterface::iRunCommand(std::string sCommand) {
 }
 
 //######  Printers #######//
-void CTextInterface::vPrintHello() {
+void CCalculatorTreeInterface::vPrintHello() {
     std::cout << "Witaj w programie" << std::endl;
     std::cout << "" + PROGRAM_NAME + " " + PROGRAM_VERSION << std::endl;
     std::cout << "Wpisz " + COMMAND_HELP + " aby uzyskac liste komend" << std::endl;
 }
 
-void CTextInterface::vPrintHelp() {
+void CCalculatorTreeInterface::vPrintHelp() {
     std::cout << "////// JAKUB NADOLNY //////" << std::endl;
     std::cout << "////// " + PROGRAM_NAME + " " + PROGRAM_VERSION + " //////" << std::endl;
     std::cout << "////// LISTA KOMEND  //////" << std::endl;
@@ -177,6 +177,6 @@ void CTextInterface::vPrintHelp() {
     std::cout << COMMAND_EXIT << std::endl;
 }
 
-void CTextInterface::vPrintBash() {
+void CCalculatorTreeInterface::vPrintBash() {
     std::cout << std::endl << "#>";
 }

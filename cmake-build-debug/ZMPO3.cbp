@@ -92,6 +92,12 @@
 		<Unit filename="/Users/matryl1/Develop/ZMPO3/CCalculatorTreeBundle/CCalculatorTree.h">
 			<Option target="ZMPO3"/>
 		</Unit>
+		<Unit filename="/Users/matryl1/Develop/ZMPO3/CCalculatorTreeBundle/CCalculatorTreeInterface.cpp">
+			<Option target="ZMPO3"/>
+		</Unit>
+		<Unit filename="/Users/matryl1/Develop/ZMPO3/CCalculatorTreeBundle/CCalculatorTreeInterface.h">
+			<Option target="ZMPO3"/>
+		</Unit>
 		<Unit filename="/Users/matryl1/Develop/ZMPO3/CCalculatorTreeBundle/CNode.cpp">
 			<Option target="ZMPO3"/>
 		</Unit>
@@ -108,12 +114,6 @@
 			<Option target="ZMPO3"/>
 		</Unit>
 		<Unit filename="/Users/matryl1/Develop/ZMPO3/CHelpersBundle/CStringHelper.h">
-			<Option target="ZMPO3"/>
-		</Unit>
-		<Unit filename="/Users/matryl1/Develop/ZMPO3/CHelpersBundle/CTextInterface.cpp">
-			<Option target="ZMPO3"/>
-		</Unit>
-		<Unit filename="/Users/matryl1/Develop/ZMPO3/CHelpersBundle/CTextInterface.h">
 			<Option target="ZMPO3"/>
 		</Unit>
 		<Unit filename="/Users/matryl1/Develop/ZMPO3/CHelpersBundle/HCommands.cpp">

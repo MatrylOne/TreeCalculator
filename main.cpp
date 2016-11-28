@@ -1,10 +1,10 @@
 
-#include "CHelpersBundle/CTextInterface.h"
+#include "CCalculatorTreeBundle/CCalculatorTreeInterface.h"
 
 
 int main() {
 
-    CTextInterface cti;
+    CCalculatorTreeInterface cti;
     cti.vBegin();
 
     return 0;
