@@ -39,10 +39,11 @@ int CCalculatorMenager::iSetTask(std::string sInput) {
     std::string sSeparated = sSeparateTask(sInput);
     this->sTask = sSeparated;
     this->sOriginalTask = sSeparated;
+    mParameters.clear();
     return 0;
 }
 
-int CCalculatorMenager::iSetParameters() {
+int CCalculatorMenager::iSetVariables() {
     if (mParameters.size() == 0) return NO_VARIABLES_FOUND;
     return 0;
 }
@@ -72,16 +73,21 @@ double CCalculatorMenager::dCalculate() {
     return cCalculatorTree->dCalculate();
 }
 
-int CCalculatorMenager::iFindParameters() {
-    std::vector<std::string> vSlices = CStringHelper::vSliceString(sOriginalTask);
+int CCalculatorMenager::iFindVariables() {
+    mParameters.clear();
+    std::vector<std::string> vSlices = CStringHelper::vSliceString(sTask);
 
     for (int i = 0; i < vSlices.size(); i++) {
         if (CCalculatorTree::bIsVariable(vSlices[i])) {
-            mParameters[vSlices[i]] = 1;
+            mParameters[vSlices[i][0]] = 1;
         }
     }
 
-    if (mParameters.size() == 0) return NO_VARIABLES_FOUND;
+    if (mParameters.empty()) {
+        return NO_VARIABLES_FOUND;
+    } else {
+        std::cout << sPrintVariables();
+    }
     return 0;
 }
 
@@ -110,6 +116,17 @@ std::string CCalculatorMenager::sSeparateTask(std::string sTask) {
         } else {
             sReturn += sArgs[i] + " ";
         }
+    }
+
+    return sReturn;
+}
+
+//######   Printers   #######//
+std::string CCalculatorMenager::sPrintVariables() {
+    std::string sReturn = "";
+
+    for (std::map<char, int>::iterator it = mParameters.begin(); it != mParameters.end(); it++) {
+        sReturn += std::string(1, it->first) + " => " + CStringHelper::sToString(it->second) + '\n';
     }
 
     return sReturn;

@@ -28,9 +28,11 @@ public:
 
     int iConstructTree();
 
-    int iFindParameters();
+    int iFindVariables();
 
-    int iSetParameters();
+    std::string sPrintVariables();
+
+    int iSetVariables();
 
     std::string sGetInfix();
 
@@ -46,7 +48,7 @@ private:
     std::string sTask;
     std::string sOriginalTask;
     CCalculatorTree *cCalculatorTree;
-    std::map<std::string, int> mParameters;
+    std::map<char, int> mParameters;
 };
 
 

@@ -69,7 +69,7 @@ int CCalculatorTreeInterface::iRunCommand(std::string sCommand) {
 
         if (vArgs[0] == COMMAND_VARIABLES) {
             if (vArgs.size() == 1) {
-                return cManager->iFindParameters();
+                return cManager->iFindVariables();
             } else {
                 return WRONG_NUMBER_OF_ARGUMENTS;
             }
@@ -77,7 +77,7 @@ int CCalculatorTreeInterface::iRunCommand(std::string sCommand) {
 
         if (vArgs[0] == COMMAND_SET) {
             if (vArgs.size() == 1) {
-                return cManager->iSetParameters();
+                return cManager->iSetVariables();
             } else {
                 return WRONG_NUMBER_OF_ARGUMENTS;
             }
