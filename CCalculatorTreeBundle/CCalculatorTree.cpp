@@ -93,8 +93,8 @@ std::string CCalculatorTree::shInfix(CNode *cCurrent) {
     if (cCurrent != nullptr) {
         std::string left = shInfix(cCurrent->nGetLeft());
         std::string right = shInfix(cCurrent->nGetRight());
-        return "(" + right + (cCurrent->sGetValue() == "" ? "[]" : ((right == "" ? "" : " ") + cCurrent->sGetValue() +
-                                                                    (left == "" ? "" : " "))) + left + ")";
+        return "(" + left + (cCurrent->sGetValue() == "" ? "[]" : ((left == "" ? "" : " ") + cCurrent->sGetValue() +
+                                                                   (right == "" ? "" : " "))) + right + ")";
     } else {
         return "";
     }
