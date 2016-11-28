@@ -6,6 +6,9 @@
 #define ZMPO3_CCALCULATORMENAGER_H
 
 #include <map>
+#include <vector>
+#include "../CHelpersBundle/CStringHelper.h"
+#include "../CHelpersBundle/HErrors.h"
 #include "CCalculatorTree.h"
 
 class CCalculatorMenager {

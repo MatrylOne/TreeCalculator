@@ -8,6 +8,8 @@
 
 #include <string>
 #include "CNode.h"
+#include "../CHelpersBundle/CCalculatorHelper.h"
+#include "../CHelpersBundle/CStringHelper.h"
 
 class CCalculatorTree {
 public:

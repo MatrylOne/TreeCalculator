@@ -1,11 +1,8 @@
 //
 // Created by Jakub Nadolny on 26.11.2016.
 //
-
-#include <vector>
 #include "CCalculatorMenager.h"
-#include "../CHelpersBundle/CStringHelper.h"
-#include "../CHelpersBundle/HErrors.h"
+
 
 /////////////////////////////////
 //////////   Public   ///////////

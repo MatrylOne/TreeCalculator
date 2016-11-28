@@ -2,10 +2,7 @@
 // Created by Jakub Nadolny on 15.11.2016.
 //
 
-#include <vector>
 #include "CCalculatorTreeInterface.h"
-#include "../CHelpersBundle/HCommands.h"
-#include "../CHelpersBundle/HDefaults.h"
 
 /////////////////////////////////
 //////////   Public   ///////////

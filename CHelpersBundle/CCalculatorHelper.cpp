@@ -3,7 +3,6 @@
 //
 
 #include "CCalculatorHelper.h"
-#include "CStringHelper.h"
 
 /////////////////////////////////
 //////////   Static   ///////////

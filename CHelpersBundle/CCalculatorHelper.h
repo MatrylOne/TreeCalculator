@@ -7,6 +7,7 @@
 
 
 #include <string>
+#include "CStringHelper.h"
 
 class CCalculatorHelper {
 public:

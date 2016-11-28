@@ -3,8 +3,6 @@
 //
 
 #include "CCalculatorTree.h"
-#include "../CHelpersBundle/CCalculatorHelper.h"
-#include "../CHelpersBundle/CStringHelper.h"
 
 /////////////////////////////////
 //////////   Public   ///////////
