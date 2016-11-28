@@ -6,6 +6,7 @@ int main() {
 
     CTextInterface cti;
     cti.vBegin();
+    //
 
     return 0;
 }
