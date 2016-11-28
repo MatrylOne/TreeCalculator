@@ -106,8 +106,8 @@ bool CCalculatorTree::bhAdd(CNode *cCurrent, std::string sSymbol) {
         if (cCurrent->sGetValue() == "") {
             cCurrent->vSetValue(sSymbol);
             if (CCalculatorHelper::bIsOperator(sSymbol)) {
-                cCurrent->vSetLeft(new CNode(""));
-                if (sSymbol != "~") cCurrent->vSetRight(new CNode(""));
+                cCurrent->vSetRight(new CNode(""));
+                if (sSymbol != "~") cCurrent->vSetLeft(new CNode(""));
             }
             return true;
         } else {
@@ -135,7 +135,7 @@ double CCalculatorTree::dhCalculate(CNode *cCurrent) {
     if (CCalculatorHelper::bIsOperator(cCurrent->sGetValue())) {
         if (cCurrent->sGetValue() == "~") {
             // Jeżeli to tylda (tylko lewy węzeł)
-            return CCalculatorHelper::dCount(cCurrent->sGetValue(), dhCalculate(cCurrent->nGetLeft()), 0);
+            return CCalculatorHelper::dCount(cCurrent->sGetValue(), dhCalculate(cCurrent->nGetRight()), 0);
         } else if (!CCalculatorHelper::bIsOperator(cCurrent->nGetLeft()->sGetValue()) &&
                    !CCalculatorHelper::bIsOperator(cCurrent->nGetRight()->sGetValue())) {
             // jeżeli lewy i prawy węzeł to nie operator
@@ -178,7 +178,7 @@ int CCalculatorTree::ihRepairTree(CNode *cCurrent) {
             if (cCurrent->nGetRight()->sGetValue() == "") { cCurrent->nGetRight()->vSetValue("1"); }
         } else if (cCurrent->sGetValue() == "~") {
             // Jeśli operatorem jest mnożenie lub dzielenie
-            if (cCurrent->nGetLeft()->sGetValue() == "") { cCurrent->nGetLeft()->vSetValue("0"); }
+            if (cCurrent->nGetRight()->sGetValue() == "") { cCurrent->nGetRight()->vSetValue("0"); }
         }
         ////////    Część rekurencyjna    //////////
         ihRepairTree(cCurrent->nGetLeft());
