@@ -1,6 +1,7 @@
 //
 // Created by Jakub Nadolny on 26.11.2016.
 //
+#include <string>
 #include "CCalculatorMenager.h"
 
 
@@ -40,11 +41,23 @@ int CCalculatorMenager::iSetTask(std::string sInput) {
     this->sTask = sSeparated;
     this->sOriginalTask = sSeparated;
     mParameters.clear();
+    iFindVariables();
     return 0;
 }
 
 int CCalculatorMenager::iSetVariables() {
-    if (mParameters.size() == 0) return NO_VARIABLES_FOUND;
+    if (!mParameters.empty()) {
+
+        std::string sTextLine = "";
+
+        for (std::map<char, int>::iterator it = mParameters.begin(); it != mParameters.end(); it++) {
+            std::cout << std::string(1, it->first) + " => ";
+            std::getline(std::cin, sTextLine);
+            if (!CStringHelper::bIsInt(sTextLine)) return NOT_A_NUMBER;
+            iSetMapElement(it->first, std::stoi(sTextLine));
+        }
+
+    } else return NO_VARIABLES_FOUND;
     return 0;
 }
 
@@ -70,25 +83,29 @@ int CCalculatorMenager::iConstructTree() {
 }
 
 double CCalculatorMenager::dCalculate() {
-    return cCalculatorTree->dCalculate();
+    return cCalculatorTree->dCalculate(mParameters);
 }
 
 int CCalculatorMenager::iFindVariables() {
-    mParameters.clear();
-    std::vector<std::string> vSlices = CStringHelper::vSliceString(sTask);
-
-    for (int i = 0; i < vSlices.size(); i++) {
-        if (CCalculatorTree::bIsVariable(vSlices[i])) {
-            mParameters[vSlices[i][0]] = 1;
-        }
-    }
-
     if (mParameters.empty()) {
-        return NO_VARIABLES_FOUND;
+        std::vector<std::string> vSlices = CStringHelper::vSliceString(sTask);
+
+        for (int i = 0; i < vSlices.size(); i++) {
+            if (CCalculatorTree::bIsVariable(vSlices[i])) {
+                iSetMapElement(vSlices[i][0], 1);
+            }
+        }
+
+        if (mParameters.empty()) {
+            return NO_VARIABLES_FOUND;
+        } else {
+            std::cout << sPrintVariables();
+        }
     } else {
         std::cout << sPrintVariables();
     }
     return 0;
+
 }
 
 int CCalculatorMenager::iRepairTree() {
@@ -130,4 +147,12 @@ std::string CCalculatorMenager::sPrintVariables() {
     }
 
     return sReturn;
+}
+
+//////////////////////////////////
+//////////   Private   ///////////
+
+int CCalculatorMenager::iSetMapElement(char cLetter, int iValue) {
+    mParameters[cLetter] = iValue;
+    return 0;
 }

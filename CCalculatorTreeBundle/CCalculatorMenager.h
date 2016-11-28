@@ -49,6 +49,8 @@ private:
     std::string sOriginalTask;
     CCalculatorTree *cCalculatorTree;
     std::map<char, int> mParameters;
+
+    int iSetMapElement(char cLetter, int iValue);
 };
 
 

@@ -48,6 +48,9 @@ int HErrors::vRecognizeError(int iError) {
         case NO_VARIABLES_FOUND :
             std::cout << "Nie znaleziono zmiennych." << std::endl;
             break;
+        case MAP_NOT_EMPTY :
+            std::cout << "Mapa parametrów jest już ustawiona." << std::endl;
+            break;
         default:
             std::cout << "NIEZNANY BŁĄD !!!" << std::endl;
             break;

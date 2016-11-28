@@ -49,8 +49,8 @@ void CCalculatorTree::vInitialize() {
     this->nRoot = new CNode("");
 }
 
-double CCalculatorTree::dCalculate() {
-    return dhCalculate(nRoot);
+double CCalculatorTree::dCalculate(std::map<char, int> &mParameters) {
+    return dhCalculate(nRoot, mParameters);
 }
 
 int CCalculatorTree::iRepairTree() {
@@ -129,11 +129,11 @@ void CCalculatorTree::vhClean(CNode *cCurrent) {
     }
 }
 
-double CCalculatorTree::dhCalculate(CNode *cCurrent) {
+double CCalculatorTree::dhCalculate(CNode *cCurrent, std::map<char, int> &mParameters) {
     if (CCalculatorHelper::bIsOperator(cCurrent->sGetValue())) {
         if (cCurrent->sGetValue() == "~") {
             // Jeżeli to tylda (tylko lewy węzeł)
-            return CCalculatorHelper::dCount(cCurrent->sGetValue(), dhCalculate(cCurrent->nGetRight()), 0);
+            return CCalculatorHelper::dCount(cCurrent->sGetValue(), dhCalculate(cCurrent->nGetRight(), mParameters), 0);
         } else if (!CCalculatorHelper::bIsOperator(cCurrent->nGetLeft()->sGetValue()) &&
                    !CCalculatorHelper::bIsOperator(cCurrent->nGetRight()->sGetValue())) {
             // jeżeli lewy i prawy węzeł to nie operator
@@ -144,20 +144,20 @@ double CCalculatorTree::dhCalculate(CNode *cCurrent) {
                    CCalculatorHelper::bIsOperator(cCurrent->nGetRight()->sGetValue())) {
             // jeżeli prawy węzeł to operator a lewy nie
             return CCalculatorHelper::dCount(cCurrent->sGetValue(), cCurrent->nGetLeft()->sGetValue(),
-                                             dhCalculate(cCurrent->nGetRight()));
+                                             dhCalculate(cCurrent->nGetRight(), mParameters));
         } else if (CCalculatorHelper::bIsOperator(cCurrent->nGetLeft()->sGetValue()) &&
                    !CCalculatorHelper::bIsOperator(cCurrent->nGetRight()->sGetValue())) {
             // jeżeli lewy węzeł to operator a prawy nie
-            return CCalculatorHelper::dCount(cCurrent->sGetValue(), dhCalculate(cCurrent->nGetLeft()),
+            return CCalculatorHelper::dCount(cCurrent->sGetValue(), dhCalculate(cCurrent->nGetLeft(), mParameters),
                                              cCurrent->nGetRight()->sGetValue());
         } else {
             // jeżeli oba węzły to operator
-            return CCalculatorHelper::dCount(cCurrent->sGetValue(), dhCalculate(cCurrent->nGetLeft()),
-                                             dhCalculate(cCurrent->nGetRight()));
+            return CCalculatorHelper::dCount(cCurrent->sGetValue(), dhCalculate(cCurrent->nGetLeft(), mParameters),
+                                             dhCalculate(cCurrent->nGetRight(), mParameters));
         }
     }// wartość w węzła jest operatorem
     else {
-        return std::stod(cCurrent->sGetValue());
+        return dMap(cCurrent->sGetValue(), mParameters);
     }// wartość węzła nie jest operatorem
 }
 
@@ -203,4 +203,9 @@ bool CCalculatorTree::bhCheckTree(CNode *cCurrent) {
     } else {
         return true;
     }
+}
+
+double CCalculatorTree::dMap(std::string sArg, std::map<char, int> &mParameters) {
+    if (CCalculatorTree::bIsVariable(sArg)) return mParameters[sArg.c_str()[0]];
+    return std::stod(sArg);
 }

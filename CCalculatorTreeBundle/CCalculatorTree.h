@@ -7,6 +7,7 @@
 
 
 #include <string>
+#include <map>
 #include "CNode.h"
 #include "../CHelpersBundle/CCalculatorHelper.h"
 #include "../CHelpersBundle/CStringHelper.h"
@@ -23,7 +24,7 @@ public:
 
     CNode *nGetRoot();
 
-    double dCalculate();
+    double dCalculate(std::map<char, int> &mParameters);
 
     std::string sInfix();
 
@@ -46,7 +47,7 @@ private:
 
     void vhClean(CNode *cCurrent);
 
-    double dhCalculate(CNode *cCurrent);
+    double dhCalculate(CNode *cCurrent, std::map<char, int> &mParameters);
 
     std::string shInfix(CNode *cCurrent);
 
@@ -57,6 +58,8 @@ private:
     int ihRepairTree(CNode *cCurrent);
 
     bool bhCheckTree(CNode *cCurrent);
+
+    double dMap(std::string sArg, std::map<char, int> &mParameters);
 };
 
 

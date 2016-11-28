@@ -29,6 +29,7 @@
 #define NO_EMPTY_LEAF 200
 #define EMPTY_NODE 201
 #define NO_VARIABLES_FOUND 202
+#define MAP_NOT_EMPTY 203
 
 ///////////////////////////
 //////////////////////////
