@@ -26,6 +26,7 @@ std::string CCalculatorMenager::sGetInfix() {
 }
 
 std::string CCalculatorMenager::sGetTreeTask() {
+    //git
     return cCalculatorTree->sGetPostfix();
 }
 
