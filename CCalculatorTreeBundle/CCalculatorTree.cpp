@@ -133,11 +133,28 @@ double CCalculatorTree::dhCalculate(CNode *cCurrent, std::map<char, int> &mParam
     if (CCalculatorHelper::bIsOperator(cCurrent->sGetValue())) {
         if (cCurrent->sGetValue() == "~") {
             // Jeżeli to tylda (tylko lewy węzeł)
+            // Przekazuję stringa operatora, doubla z prawego korzenia oraz parametry, oraz 0 dla lewej wartości
+            return CCalculatorHelper::dCount(cCurrent->sGetValue(), dhCalculate(cCurrent->nGetRight(), mParameters), 0);
+        } else {
+            return CCalculatorHelper::dCount(cCurrent->sGetValue(), dhCalculate(cCurrent->nGetLeft(), mParameters),
+                                             dhCalculate(cCurrent->nGetRight(), mParameters));
+        }
+    }// wartość w węzła jest operatorem
+    else {
+        return dMap(cCurrent->sGetValue(), mParameters);
+    }// wartość węzła nie jest operatorem
+}
+
+/*double CCalculatorTree::dhCalculate(CNode *cCurrent, std::map<char, int> &mParameters) {
+    if (CCalculatorHelper::bIsOperator(cCurrent->sGetValue())) {
+        if (cCurrent->sGetValue() == "~") {
+            // Jeżeli to tylda (tylko lewy węzeł)
+            // Przekazuję stringa operatora, doubla z prawego korzenia oraz parametry, oraz 0 dla lewej wartości
             return CCalculatorHelper::dCount(cCurrent->sGetValue(), dhCalculate(cCurrent->nGetRight(), mParameters), 0);
         } else if (!CCalculatorHelper::bIsOperator(cCurrent->nGetLeft()->sGetValue()) &&
                    !CCalculatorHelper::bIsOperator(cCurrent->nGetRight()->sGetValue())) {
             // jeżeli lewy i prawy węzeł to nie operator
-            // CCalculatorHelper wykrywa jaką operację ma wykonać
+            // CCalculatorHelper::dCount wykrywa jaką operację ma wykonać
             return CCalculatorHelper::dCount(cCurrent->sGetValue(), cCurrent->nGetLeft()->sGetValue(),
                                              cCurrent->nGetRight()->sGetValue());
         } else if (!CCalculatorHelper::bIsOperator(cCurrent->nGetLeft()->sGetValue()) &&
@@ -159,7 +176,7 @@ double CCalculatorTree::dhCalculate(CNode *cCurrent, std::map<char, int> &mParam
     else {
         return dMap(cCurrent->sGetValue(), mParameters);
     }// wartość węzła nie jest operatorem
-}
+} BACKUP */
 
 int CCalculatorTree::ihRepairTree(CNode *cCurrent) {
 
