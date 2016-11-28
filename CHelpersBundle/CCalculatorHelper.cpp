@@ -5,10 +5,15 @@
 #include "CCalculatorHelper.h"
 #include "CStringHelper.h"
 
+/////////////////////////////////
+//////////   Static   ///////////
+
+//######  Checkers  #######//
 bool CCalculatorHelper::bIsOperator(std::string sValue) {
     return sValue == "+" || sValue == "-" || sValue == "*" || sValue == "/" || sValue == "~";
 }
 
+//######  Calculations  #######//
 double CCalculatorHelper::dCount(std::string sOperator, double sFirst, double sSecound) {
     if (bIsOperator(sOperator)) {
         if (sOperator == "*") {
