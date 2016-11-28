@@ -41,12 +41,10 @@ int CTextInterface::iRunCommand(std::string sCommand) {
 
         if (vArgs[0] == COMMAND_INPUT) {
             if (vArgs.size() > 1) {
-                int iAnswer = cManager->iSetTask(CStringHelper::sParseVector(vArgs, 1));
-                if (iAnswer == 0) {
-                    return cManager->iConstructTree();
-                } else {
-                    return iAnswer;
-                }
+                cManager->iSetTask(CStringHelper::sParseVector(vArgs, 1));
+                int iReturn = cManager->iConstructTree();
+                if (iReturn != 0) std::cout << cManager->sGetTreeTask() << std::endl;
+                return iReturn;
             } else {
                 return WRONG_NUMBER_OF_ARGUMENTS;
             }
@@ -90,7 +88,9 @@ int CTextInterface::iRunCommand(std::string sCommand) {
 
         if (vArgs[0] == COMMAND_FIX) {
             if (vArgs.size() == 1) {
-                return cManager->iRepairTree();
+                cManager->iRepairTree();
+                std::cout << cManager->sGetTreeTask() << std::endl;
+                return 0;
             } else {
                 return WRONG_NUMBER_OF_ARGUMENTS;
             }

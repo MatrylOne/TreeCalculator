@@ -62,7 +62,7 @@ int CCalculatorMenager::iConstructTree() {
     cCalculatorTree->vClean();
     cCalculatorTree->vInitialize();
 
-    for (int i = (sArgs.size() - 1); i >= 0; i--) {
+    for (long i = (sArgs.size() - 1); i >= 0; i--) {
         if (!cCalculatorTree->bAdd(sArgs[i])) {
             return NO_EMPTY_LEAF;
         }
@@ -90,7 +90,7 @@ int CCalculatorMenager::iFindParameters() {
 
 int CCalculatorMenager::iRepairTree() {
     cCalculatorTree->iRepairTree();
-    this->sTask = cCalculatorTree->sGetPostfix();
+    this->sTask = cCalculatorTree->sGetPostfixSpace();
     return 0;
 }
 

@@ -29,6 +29,8 @@ public:
 
     std::string sGetPostfix();
 
+    std::string sGetPostfixSpace();
+
     int iRepairTree();
 
     bool bCheckTree();
@@ -47,6 +49,8 @@ private:
     std::string shInfix(CNode *cCurrent);
 
     std::string shGetPostfix(CNode *cCurrent);
+
+    std::string shGetPostfixSpace(CNode *cCurrent);
 
     int ihRepairTree(CNode *cCurrent);
 

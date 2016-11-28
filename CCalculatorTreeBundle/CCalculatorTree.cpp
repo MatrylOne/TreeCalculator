@@ -28,6 +28,10 @@ std::string CCalculatorTree::sGetPostfix() {
     return shGetPostfix(nRoot);
 }
 
+std::string CCalculatorTree::sGetPostfixSpace() {
+    return shGetPostfixSpace(nRoot);
+}
+
 //######   Setters   #######//
 bool CCalculatorTree::bAdd(std::string sSymbol) {
     return bhAdd(nRoot, sSymbol);
@@ -69,6 +73,16 @@ std::string CCalculatorTree::shGetPostfix(CNode *cCurrent) {
         std::string left = shGetPostfix(cCurrent->nGetLeft());
         std::string right = shGetPostfix(cCurrent->nGetRight());
         return left + right + (cCurrent->sGetValue() == "" ? "[] " : (cCurrent->sGetValue() + " "));
+    } else {
+        return "";
+    }
+}
+
+std::string CCalculatorTree::shGetPostfixSpace(CNode *cCurrent) {
+    if (cCurrent != nullptr) {
+        std::string left = shGetPostfixSpace(cCurrent->nGetLeft());
+        std::string right = shGetPostfixSpace(cCurrent->nGetRight());
+        return left + right + (cCurrent->sGetValue() == "" ? "" : (cCurrent->sGetValue() + " "));
     } else {
         return "";
     }
@@ -156,12 +170,12 @@ int CCalculatorTree::ihRepairTree(CNode *cCurrent) {
             cCurrent->sGetValue() == "-") {
             // Jeśli operatorem jest dodawanie lub odejmowanie
             if (cCurrent->nGetLeft()->sGetValue() == "") { cCurrent->nGetLeft()->vSetValue("0"); }
-            if (cCurrent->nGetRight()->sGetValue() == "") { cCurrent->nGetLeft()->vSetValue("0"); }
+            if (cCurrent->nGetRight()->sGetValue() == "") { cCurrent->nGetRight()->vSetValue("0"); }
         } else if (cCurrent->sGetValue() == "*" ||
                    cCurrent->sGetValue() == "/") {
             // Jeśli operatorem jest mnożenie lub dzielenie
             if (cCurrent->nGetLeft()->sGetValue() == "") { cCurrent->nGetLeft()->vSetValue("1"); }
-            if (cCurrent->nGetRight()->sGetValue() == "") { cCurrent->nGetLeft()->vSetValue("1"); }
+            if (cCurrent->nGetRight()->sGetValue() == "") { cCurrent->nGetRight()->vSetValue("1"); }
         } else if (cCurrent->sGetValue() == "~") {
             // Jeśli operatorem jest mnożenie lub dzielenie
             if (cCurrent->nGetLeft()->sGetValue() == "") { cCurrent->nGetLeft()->vSetValue("0"); }
@@ -181,11 +195,14 @@ bool CCalculatorTree::bIsVariable(std::string sArgument) {
 
 bool CCalculatorTree::bhCheckTree(CNode *cCurrent) {
     if (cCurrent != nullptr) {
-        if (cCurrent->sGetValue() == "") return false;
-        ////////    Część rekurencyjna    //////////
-        ihRepairTree(cCurrent->nGetLeft());
-        ihRepairTree(cCurrent->nGetRight());
+        if (cCurrent->sGetValue() == "") {
+            return false;
+        } else {
+            bool bTest = bhCheckTree(cCurrent->nGetLeft());
+            if (bTest == true) bTest = bhCheckTree(cCurrent->nGetRight());
+            return bTest;
+        }
+    } else {
+        return true;
     }
-
-    return true;
 }

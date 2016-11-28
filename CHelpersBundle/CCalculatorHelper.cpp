@@ -27,6 +27,7 @@ double CCalculatorHelper::dCount(std::string sOperator, double sFirst, double sS
         } else if (sOperator == "~") {
             return -1 * sFirst;
         }
+        return 0;
     } else {
         return 0;
     }
