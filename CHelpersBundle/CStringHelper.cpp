@@ -24,7 +24,7 @@ bool CStringHelper::bIsInt(char sText) {
 
 bool CStringHelper::bIsInt(std::string sText) {
     std::string::const_iterator it = sText.begin();
-    while ((it != sText.end() && std::isdigit(*it)) || *it == '-') ++it;
+    while ((it != sText.end() && std::isdigit(*it))) ++it;
     return !sText.empty() && it == sText.end();
 }
 
