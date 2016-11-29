@@ -7,8 +7,11 @@
 
 #include <map>
 #include <vector>
+#include <string>
+
 #include "../CHelpersBundle/CStringHelper.h"
 #include "../CHelpersBundle/HErrors.h"
+
 #include "CCalculatorTree.h"
 
 class CCalculatorMenager {

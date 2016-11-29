@@ -8,11 +8,13 @@
 
 #include <string>
 #include <vector>
+
 #include "../CHelpersBundle/CStringHelper.h"
 #include "../CHelpersBundle/HErrors.h"
-#include "CCalculatorMenager.h"
 #include "../CHelpersBundle/HCommands.h"
 #include "../CHelpersBundle/HDefaults.h"
+
+#include "CCalculatorMenager.h"
 
 class CCalculatorTreeInterface {
 public:
