@@ -38,7 +38,7 @@ int HErrors::vRecognizeError(int iError) {
             break;
         case NO_EMPTY_LEAF :
             std::cout << "Liczba argumentów zbyt duża dla zadanych operatorów." << std::endl
-                      << "Nadmiar zostanie pominięty." << std::endl;
+                      << "Nadmiar został pominięty." << std::endl;
             break;
         case EMPTY_NODE :
             std::cout << "Liczba argumentów zbyt mała dla zadanych operatorów." << std::endl

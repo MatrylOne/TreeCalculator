@@ -123,19 +123,15 @@ std::string CCalculatorMenager::sSeparateTask(std::string sTask) {
     std::string sReturn = "";
 
     for (int i = 0; i < sArgs.size(); i++) {
-        if (sArgs[i].size() > 1) {
-            if (!CStringHelper::bIsInt(sArgs[i])) {
-                std::string sTemp = sArgs[i];
-                for (int j = 0; j < sTemp.size(); j++) {
-                    if (!CStringHelper::bIsInt(sTemp[j]) && j > 0) sReturn += " ";
-                    sReturn += sTemp[j];
-                    if (!CStringHelper::bIsInt(sTemp[j]) && j == 0) sReturn += " ";
-                }
-            } else {
-                sReturn += sArgs[i] + " ";
+        if (sArgs[i].size() > 1 && !CStringHelper::bIsInt(sArgs[i])) {
+            std::string sTemp = sArgs[i];
+            int iTmpSize = sTemp.size();
+            for (int j = 0; j < iTmpSize; j++) {
+                sReturn += sTemp[j];
+                if (sArgs[i] != "") sReturn += " ";
             }
         } else {
-            sReturn += sArgs[i] + " ";
+            if (sArgs[i] != "") sReturn += sArgs[i] + " ";
         }
     }
 

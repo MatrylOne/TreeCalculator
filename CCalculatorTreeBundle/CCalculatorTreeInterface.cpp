@@ -100,13 +100,11 @@ int CCalculatorTreeInterface::iRunCommand(std::string sCommand) {
         if (vArgs[0] == COMMAND_CALCULATE) {
             if (vArgs.size() == 1) {
                 int iStatus = cManager->iConstructTree();
-                if (iStatus == 0) {
+                if (iStatus == 0 || iStatus == NO_EMPTY_LEAF) {
                     std::cout << "Wynik operacji : " + CStringHelper::sDoubleToString(cManager->dCalculate())
                               << std::endl;
-                    return 0;
-                } else {
-                    return iStatus;
                 }
+                return iStatus;
             } else {
                 return WRONG_NUMBER_OF_ARGUMENTS;
             }
