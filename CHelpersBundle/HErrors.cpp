@@ -43,6 +43,8 @@ int HErrors::vRecognizeError(int iError) {
         case EMPTY_NODE :
             std::cout << "Liczba argumentów zbyt mała dla zadanych operatorów." << std::endl
                       << "Brakujące argumenty wyświetlane jako []." << std::endl
+                      << "Wpisz print aby wypisać wyrażenie." << std::endl
+                      << "Wpisz infix aby wypisać wyrażenie w postaci infix'owej." << std::endl
                       << "Wpisz fix aby naprawić." << std::endl;
             break;
         case NO_VARIABLES_FOUND :
