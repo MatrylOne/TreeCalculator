@@ -23,7 +23,6 @@ public:
 
     std::string sGetTreeTask();
 
-
     int iSetTask(std::string sInput);
 
     int iConstructTree();
@@ -43,6 +42,8 @@ public:
     std::string sSeparateTask(std::string sTask);
 
     bool bCheckTree();
+
+    void mGetIssues(std::map<char, int> &mErrors);
 
 private:
     std::string sTask;

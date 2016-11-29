@@ -40,7 +40,11 @@ int CCalculatorTreeInterface::iRunCommand(std::string sCommand) {
             if (vArgs.size() > 1) {
                 cManager->iSetTask(CStringHelper::sParseVector(vArgs, 1));
                 int iReturn = cManager->iConstructTree();
-                if (iReturn != 0) std::cout << cManager->sGetTreeTask() << std::endl;
+                if (iReturn != 0) {
+                    std::cout << std::endl;
+                    std::cout << cManager->sGetTreeTask() << std::endl << std::endl;
+                    std::cout << vPrintErrors() << std::endl;
+                }
                 return iReturn;
             } else {
                 return WRONG_NUMBER_OF_ARGUMENTS;
@@ -176,4 +180,20 @@ void CCalculatorTreeInterface::vPrintHelp() {
 
 void CCalculatorTreeInterface::vPrintBash() {
     std::cout << std::endl << "#>";
+}
+
+std::string CCalculatorTreeInterface::vPrintErrors() {
+    std::map<char, int> mErrors;
+    std::string sReturn = "";
+    cManager->mGetIssues(mErrors);
+
+    if (!mErrors.empty()) {
+        for (std::map<char, int>::iterator it = mErrors.begin(); it != mErrors.end(); it++) {
+            sReturn +=
+                    std::string(1, it->first) + " => " + CStringHelper::sToString(it->second) + " pustych argumentów." +
+                    '\n';
+        }
+    }
+
+    return sReturn;
 }

@@ -30,6 +30,8 @@ public:
 
     void vPrintBash();
 
+    std::string vPrintErrors();
+
 private:
     bool bContinue;
     CCalculatorMenager *cManager;

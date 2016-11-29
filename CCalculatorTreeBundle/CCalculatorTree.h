@@ -38,6 +38,8 @@ public:
 
     bool bCheckTree();
 
+    void mGetIssues(std::map<char, int> &mErrors);
+
     static bool bIsVariable(std::string sArgument);
 
 private:
@@ -60,6 +62,8 @@ private:
     bool bhCheckTree(CNode *cCurrent);
 
     double dMap(std::string sArg, std::map<char, int> &mParameters);
+
+    void mhGetIssues(CNode *cCurrent, std::map<char, int> &mErrors);
 };
 
 

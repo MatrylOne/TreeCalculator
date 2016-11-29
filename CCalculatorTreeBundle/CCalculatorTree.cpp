@@ -30,6 +30,10 @@ std::string CCalculatorTree::sGetPostfixSpace() {
     return shGetPostfixSpace(nRoot);
 }
 
+void CCalculatorTree::mGetIssues(std::map<char, int> &mErrors) {
+    mhGetIssues(nRoot, mErrors);
+}
+
 //######   Setters   #######//
 bool CCalculatorTree::bAdd(std::string sSymbol) {
     return bhAdd(nRoot, sSymbol);
@@ -83,6 +87,20 @@ std::string CCalculatorTree::shGetPostfixSpace(CNode *cCurrent) {
         return left + right + (cCurrent->sGetValue() == "" ? "" : (cCurrent->sGetValue() + " "));
     } else {
         return "";
+    }
+}
+
+void CCalculatorTree::mhGetIssues(CNode *cCurrent, std::map<char, int> &mErrors) {
+    if (cCurrent != nullptr) {
+        if (CCalculatorHelper::bIsOperator(cCurrent->sGetValue())) {
+            if (cCurrent->nGetRight() != nullptr && cCurrent->nGetRight()->sGetValue() == "")
+                mErrors[cCurrent->sGetValue()[0]] += 1;
+            if (cCurrent->nGetLeft() != nullptr && cCurrent->nGetLeft()->sGetValue() == "")
+                mErrors[cCurrent->sGetValue()[0]] += 1;
+
+            mhGetIssues(cCurrent->nGetLeft(), mErrors);
+            mhGetIssues(cCurrent->nGetRight(), mErrors);
+        }
     }
 }
 

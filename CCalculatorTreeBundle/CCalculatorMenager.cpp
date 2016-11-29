@@ -35,6 +35,10 @@ std::string CCalculatorMenager::sGetParsedTask() {
     return std::string("TODO - not ended");
 }
 
+void CCalculatorMenager::mGetIssues(std::map<char, int> &mErrors) {
+    cCalculatorTree->mGetIssues(mErrors);
+}
+
 //######   Setters   #######//
 int CCalculatorMenager::iSetTask(std::string sInput) {
     std::string sSeparated = sSeparateTask(sInput);
