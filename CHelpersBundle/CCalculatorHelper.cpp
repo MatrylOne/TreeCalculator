@@ -31,27 +31,3 @@ double CCalculatorHelper::dCount(std::string sOperator, double sFirst, double sS
         return 0;
     }
 }
-
-double CCalculatorHelper::dCount(std::string sOperator, std::string sFirst, std::string sSecond) {
-    if (CStringHelper::bIsInt(sFirst) && CStringHelper::bIsInt(sSecond)) {
-        return dCount(sOperator, std::stod(sFirst), std::stod(sSecond));
-    } else {
-        return 0;
-    }
-}
-
-double CCalculatorHelper::dCount(std::string sOperator, std::string sFirst, double sSecond) {
-    if (CStringHelper::bIsInt(sFirst)) {
-        return dCount(sOperator, std::stod(sFirst), sSecond);
-    } else {
-        return 0;
-    }
-}
-
-double CCalculatorHelper::dCount(std::string sOperator, double sFirst, std::string sSecond) {
-    if (CStringHelper::bIsInt(sSecond)) {
-        return dCount(sOperator, sFirst, std::stod(sSecond));
-    } else {
-        return 0;
-    }
-}
