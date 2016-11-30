@@ -138,8 +138,8 @@ int CCalculatorTreeInterface::iRunCommand(std::string sCommand) {
 
 //######  Printers #######//
 void CCalculatorTreeInterface::vPrintHello() {
-    std::cout << "Witaj w programie" << std::endl;
-    std::cout << "" + PROGRAM_NAME + " " + PROGRAM_VERSION << std::endl;
+    std::cout << "#" + PROGRAM_NAME + "#" << std::endl << "wersja : " + PROGRAM_VERSION << std::endl << std::endl;
+    std::cout << "Witaj w programie ! " << std::endl;
     std::cout << "Wpisz " + COMMAND_HELP + " aby uzyskac liste komend" << std::endl;
 }
 
