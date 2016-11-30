@@ -21,7 +21,7 @@ CNode::CNode(CNode &nNode) {
 
 //######    Destructors   #######//
 CNode::~CNode() {
-    //std::cout << "Removing node " + sValue << std::endl;
+//    std::cout << "Removing node " + sValue << std::endl;
     sValue = "";
     nLeft = nullptr;
     nRight = nullptr;
