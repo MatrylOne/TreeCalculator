@@ -33,12 +33,11 @@
 #define NODE_NOT_FOUND 204
 
 ///////////////////////////
-//////////////////////////
+///////////////////////////
 
 class HErrors {
 public :
     static int vRecognizeError(int iError);
 };
-
 
 #endif //FIRST_HERRORS_H

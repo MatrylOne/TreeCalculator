@@ -17,26 +17,23 @@
 #include "CCalculatorManager.h"
 
 class CCalculatorTreeInterface {
+private:
+    bool bContinue;
+    CCalculatorManager *cManager;
+
 public:
     CCalculatorTreeInterface();
 
-    ~CCalculatorTreeInterface();
-
     void vBegin();
-
-    int iRunCommand(std::string sCommand);
-
     void vPrintHello();
-
     void vPrintHelp();
-
     void vPrintBash();
 
     std::string vPrintErrors();
 
-private:
-    bool bContinue;
-    CCalculatorManager *cManager;
+    int iRunCommand(std::string sCommand);
+
+    ~CCalculatorTreeInterface();
 };
 
 

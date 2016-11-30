@@ -15,10 +15,25 @@
 #include "CCalculatorTree.h"
 
 class CCalculatorManager {
+private:
+    std::string sTask;
+    std::string sOriginalTask;
+    CCalculatorTree *cCalculatorTree;
+    std::map<char, int> mParameters;
+
 public:
     CCalculatorManager();
 
-    ~CCalculatorManager();
+    bool bCheckTree();
+
+    int iSetTask(std::string sInput);
+    int iConstructTree();
+    int iFindVariables();
+    int iSetVariables();
+    int iRepairTree();
+    int iSearchAndRoot(std::string sArg);
+
+    double dCalculate();
 
     std::string sGetTask();
 
@@ -26,37 +41,18 @@ public:
 
     std::string sGetTreeTask();
 
-    int iSetTask(std::string sInput);
-
-    int iConstructTree();
-
-    int iFindVariables();
-
     std::string sPrintVariables();
 
-    int iSetVariables();
-
     std::string sGetInfix();
-
-    double dCalculate();
-
-    int iRepairTree();
-
-    int iSearchAndRoot(std::string sArg);
-
     std::string sSeparateTask(std::string sTask);
 
-    bool bCheckTree();
+    void vGetIssues(std::map<char, int> &mErrors);
 
-    void mGetIssues(std::map<char, int> &mErrors);
+    ~CCalculatorManager();
 
 private:
-    std::string sTask;
-    std::string sOriginalTask;
-    CCalculatorTree *cCalculatorTree;
-    std::map<char, int> mParameters;
-
     int iSetMapElement(char cLetter, int iValue);
+
 };
 
 

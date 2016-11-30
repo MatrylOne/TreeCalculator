@@ -14,13 +14,7 @@ class CCalculatorHelper {
 public:
     static bool bIsOperator(std::string sValue);
 
-    static double dCount(std::string sOperator, std::string sFirst, std::string sSecond);
-
     static double dCount(std::string sOperator, double sFirst, double sSecond);
-
-    static double dCount(std::string sOperator, std::string sFirst, double sSecond);
-
-    static double dCount(std::string sOperator, double sFirst, std::string sSecond);
 };
 
 

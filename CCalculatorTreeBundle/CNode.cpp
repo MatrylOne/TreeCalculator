@@ -6,6 +6,7 @@
 
 /////////////////////////////////
 //////////   Public   ///////////
+
 //######   Constructors #######//
 CNode::CNode() {
     vConstructor("", nullptr, nullptr);
@@ -17,13 +18,6 @@ CNode::CNode(std::string sValue) {
 
 CNode::CNode(CNode &nNode) {
     std::cout << "copy constructor allert" << std::endl;
-}
-
-//######    Destructors   #######//
-CNode::~CNode() {
-    if (this->nGetLeft() != nullptr) delete nGetLeft();
-    if (this->nGetRight() != nullptr) delete nGetRight();
-    std::cout << "Usuwam " + (sGetValue() == "" ? "pusty węzeł" : sGetValue()) << std::endl;
 }
 
 //######    Getters   #######//
@@ -57,6 +51,13 @@ void CNode::vSetRight(CNode *nRight) {
 //######    Printers   #######//
 void CNode::vPrint() {
     std::cout << "Node : '" + sValue + "'" << std::endl;
+}
+
+//######    Destructors   #######//
+CNode::~CNode() {
+    if (this->nGetLeft() != nullptr) delete nGetLeft();
+    if (this->nGetRight() != nullptr) delete nGetRight();
+    std::cout << "Usuwam " + (sGetValue() == "" ? "pusty węzeł" : sGetValue()) << std::endl;
 }
 
 //////////////////////////////////

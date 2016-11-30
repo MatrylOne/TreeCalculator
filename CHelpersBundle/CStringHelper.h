@@ -11,23 +11,16 @@
 
 class CStringHelper {
 public:
-    static std::vector<std::string> vSliceString(std::string sText);
-
     static bool bIsInt(std::string sText);
-
     static bool bIsInt(char sText);
-
     static bool bIsDouble(const char *str);
 
     static std::string sToString(int iNumber);
-
     static std::string sDoubleToString(double dNumber);
-
     static std::string sParseVector(std::vector<std::string> vArgs);
-
     static std::string sParseVector(std::vector<std::string> vArgs, int iFrom);
 
-
+    static std::vector<std::string> vSliceString(std::string sText);
 };
 
 

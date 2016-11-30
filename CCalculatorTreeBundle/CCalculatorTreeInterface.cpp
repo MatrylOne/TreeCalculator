@@ -13,9 +13,67 @@ CCalculatorTreeInterface::CCalculatorTreeInterface() {
     this->cManager = new CCalculatorManager();
 }
 
-//######  Destructors #######//
-CCalculatorTreeInterface::~CCalculatorTreeInterface() {
-    delete cManager;
+//######  Printers #######//
+std::string CCalculatorTreeInterface::vPrintErrors() {
+    std::map<char, int> mErrors;
+    std::string sReturn = "";
+    cManager->vGetIssues(mErrors);
+
+    if (!mErrors.empty()) {
+        for (std::map<char, int>::iterator it = mErrors.begin(); it != mErrors.end(); it++) {
+            sReturn +=
+                    std::string(1, it->first) + " => " + CStringHelper::sToString(it->second) + " pustych argumentów." +
+                    '\n';
+        }
+    }
+
+    return sReturn;
+}
+
+void CCalculatorTreeInterface::vPrintHello() {
+    std::cout << PROGRAM_NAME << std::endl << "Wersja : " + PROGRAM_VERSION << std::endl << std::endl;
+    std::cout << "Witaj w programie ! " << std::endl;
+    std::cout << "Wpisz " + COMMAND_HELP + " aby uzyskac liste komend" << std::endl;
+}
+
+void CCalculatorTreeInterface::vPrintHelp() {
+    std::cout << "////// JAKUB NADOLNY //////" << std::endl;
+    std::cout << "////// " + PROGRAM_NAME + " " + PROGRAM_VERSION + " //////" << std::endl;
+    std::cout << "////// LISTA KOMEND  //////" << std::endl;
+    std::cout << "" << std::endl;
+    std::cout << DEFINITION_INPUT << std::endl;
+    std::cout << COMMAND_INPUT + " <wyrażenie>" << std::endl;
+    std::cout << "" << std::endl;
+    std::cout << DEFINITION_PRINT << std::endl;
+    std::cout << COMMAND_PRINT << std::endl;
+    std::cout << "" << std::endl;
+    std::cout << DEFINITION_INFIX << std::endl;
+    std::cout << COMMAND_INFIX << std::endl;
+    std::cout << "" << std::endl;
+    std::cout << DEFINITION_VARIABLES << std::endl;
+    std::cout << COMMAND_VARIABLES << std::endl;
+    std::cout << "" << std::endl;
+    std::cout << DEFINITION_SET << std::endl;
+    std::cout << COMMAND_SET << std::endl;
+    std::cout << "" << std::endl;
+    std::cout << DEFINITION_FIX << std::endl;
+    std::cout << COMMAND_FIX << std::endl;
+    std::cout << "" << std::endl;
+    std::cout << DEFINITION_CALCULATE << std::endl;
+    std::cout << COMMAND_CALCULATE << std::endl;
+    std::cout << "" << std::endl;
+    std::cout << DEFINITION_ROOT << std::endl;
+    std::cout << COMMAND_ROOT << std::endl;
+    std::cout << "" << std::endl;
+    std::cout << DEFINITION_HELP << std::endl;
+    std::cout << COMMAND_HELP << std::endl;
+    std::cout << "" << std::endl;
+    std::cout << DEFINITION_EXIT << std::endl;
+    std::cout << COMMAND_EXIT << std::endl;
+}
+
+void CCalculatorTreeInterface::vPrintBash() {
+    std::cout << std::endl << "#>";
 }
 
 //######  Tools #######//
@@ -144,65 +202,7 @@ int CCalculatorTreeInterface::iRunCommand(std::string sCommand) {
     }
 }
 
-//######  Printers #######//
-void CCalculatorTreeInterface::vPrintHello() {
-    std::cout << PROGRAM_NAME << std::endl << "Wersja : " + PROGRAM_VERSION << std::endl << std::endl;
-    std::cout << "Witaj w programie ! " << std::endl;
-    std::cout << "Wpisz " + COMMAND_HELP + " aby uzyskac liste komend" << std::endl;
-}
-
-void CCalculatorTreeInterface::vPrintHelp() {
-    std::cout << "////// JAKUB NADOLNY //////" << std::endl;
-    std::cout << "////// " + PROGRAM_NAME + " " + PROGRAM_VERSION + " //////" << std::endl;
-    std::cout << "////// LISTA KOMEND  //////" << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << DEFINITION_INPUT << std::endl;
-    std::cout << COMMAND_INPUT + " <wyrażenie>" << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << DEFINITION_PRINT << std::endl;
-    std::cout << COMMAND_PRINT << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << DEFINITION_INFIX << std::endl;
-    std::cout << COMMAND_INFIX << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << DEFINITION_VARIABLES << std::endl;
-    std::cout << COMMAND_VARIABLES << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << DEFINITION_SET << std::endl;
-    std::cout << COMMAND_SET << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << DEFINITION_FIX << std::endl;
-    std::cout << COMMAND_FIX << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << DEFINITION_CALCULATE << std::endl;
-    std::cout << COMMAND_CALCULATE << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << DEFINITION_ROOT << std::endl;
-    std::cout << COMMAND_ROOT << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << DEFINITION_HELP << std::endl;
-    std::cout << COMMAND_HELP << std::endl;
-    std::cout << "" << std::endl;
-    std::cout << DEFINITION_EXIT << std::endl;
-    std::cout << COMMAND_EXIT << std::endl;
-}
-
-void CCalculatorTreeInterface::vPrintBash() {
-    std::cout << std::endl << "#>";
-}
-
-std::string CCalculatorTreeInterface::vPrintErrors() {
-    std::map<char, int> mErrors;
-    std::string sReturn = "";
-    cManager->mGetIssues(mErrors);
-
-    if (!mErrors.empty()) {
-        for (std::map<char, int>::iterator it = mErrors.begin(); it != mErrors.end(); it++) {
-            sReturn +=
-                    std::string(1, it->first) + " => " + CStringHelper::sToString(it->second) + " pustych argumentów." +
-                    '\n';
-        }
-    }
-
-    return sReturn;
+//######  Destructors #######//
+CCalculatorTreeInterface::~CCalculatorTreeInterface() {
+    delete cManager;
 }

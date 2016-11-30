@@ -28,8 +28,6 @@
 #define DEFINITION_EXIT std::string("Kończy pracę programu :")
 
 class HCommands {
-
 };
-
 
 #endif //ZMPO3_HCOMMANDS_H

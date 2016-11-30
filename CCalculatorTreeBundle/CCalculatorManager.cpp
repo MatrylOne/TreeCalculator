@@ -12,11 +12,6 @@ CCalculatorManager::CCalculatorManager() {
     cCalculatorTree = new CCalculatorTree();
 }
 
-//######   Destructors  #######//
-CCalculatorManager::~CCalculatorManager() {
-    delete cCalculatorTree;
-}
-
 //######   Getters   #######//
 std::string CCalculatorManager::sGetInfix() {
     return cCalculatorTree->sInfix();
@@ -34,7 +29,7 @@ std::string CCalculatorManager::sGetParsedTask() {
     return std::string("TODO - not ended");
 }
 
-void CCalculatorManager::mGetIssues(std::map<char, int> &mErrors) {
+void CCalculatorManager::vGetIssues(std::map<char, int> &mErrors) {
     cCalculatorTree->mGetIssues(mErrors);
 }
 
@@ -85,10 +80,6 @@ int CCalculatorManager::iConstructTree() {
     return cCalculatorTree->bCheckTree() ? 0 : EMPTY_NODE;
 }
 
-double CCalculatorManager::dCalculate() {
-    return cCalculatorTree->dCalculate(mParameters);
-}
-
 int CCalculatorManager::iFindVariables() {
     if (mParameters.empty()) {
         std::vector<std::string> vSlices = CStringHelper::vSliceString(sTask);
@@ -117,6 +108,14 @@ int CCalculatorManager::iRepairTree() {
     return 0;
 }
 
+int CCalculatorManager::iSearchAndRoot(std::string sArg) {
+    return cCalculatorTree->iSearchAndRoot(sArg);
+}
+
+double CCalculatorManager::dCalculate() {
+    return cCalculatorTree->dCalculate(mParameters);
+}
+
 std::string CCalculatorManager::sSeparateTask(std::string sTask) {
     std::vector<std::string> sArgs = CStringHelper::vSliceString(sTask);
     std::string sReturn = "";
@@ -137,10 +136,6 @@ std::string CCalculatorManager::sSeparateTask(std::string sTask) {
     return sReturn;
 }
 
-int CCalculatorManager::iSearchAndRoot(std::string sArg) {
-    return cCalculatorTree->iSearchAndRoot(sArg);
-}
-
 //######   Printers   #######//
 std::string CCalculatorManager::sPrintVariables() {
     std::string sReturn = "";
@@ -150,6 +145,11 @@ std::string CCalculatorManager::sPrintVariables() {
     }
 
     return sReturn;
+}
+
+//######   Destructors  #######//
+CCalculatorManager::~CCalculatorManager() {
+    delete cCalculatorTree;
 }
 
 //////////////////////////////////

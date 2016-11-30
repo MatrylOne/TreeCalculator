@@ -16,59 +16,55 @@
 #include "CNode.h"
 
 class CCalculatorTree {
-public:
-    CCalculatorTree();
-
-    ~CCalculatorTree();
-
-    bool bAdd(std::string sSymbol);
-
-    void vClean();
-
-    CNode *nGetRoot();
-
-    double dCalculate(std::map<char, int> &mParameters);
-
-    std::string sInfix();
-
-    void vInitialize();
-
-    std::string sGetPostfix();
-
-    std::string sGetPostfixSpace();
-
-    int iRepairTree();
-
-    bool bCheckTree();
-
-    void mGetIssues(std::map<char, int> &mErrors);
-
-    int iSearchAndRoot(std::string sArg);
-
-    static bool bIsVariable(std::string sArgument);
-
 private:
     CNode *nRoot;
 
-    bool bhAdd(CNode *cCurrent, std::string sSymbol);
+public:
+    CCalculatorTree();
 
-    double dhCalculate(CNode *cCurrent, std::map<char, int> &mParameters);
+    void vInitialize();
+    void vClean();
 
-    std::string shInfix(CNode *cCurrent);
+    void mGetIssues(std::map<char, int> &mErrors);
 
-    std::string shGetPostfix(CNode *cCurrent);
+    int iRepairTree();
 
-    std::string shGetPostfixSpace(CNode *cCurrent);
+    int iSearchAndRoot(std::string sArg);
 
-    int ihRepairTree(CNode *cCurrent);
+    double dCalculate(std::map<char, int> &mParameters);
 
-    bool bhCheckTree(CNode *cCurrent);
+    bool bAdd(std::string sSymbol);
 
-    double dMap(std::string sArg, std::map<char, int> &mParameters);
+    bool bCheckTree();
+
+    CNode *nGetRoot();
+
+    std::string sInfix();
+    std::string sGetPostfix();
+    std::string sGetPostfixSpace();
+
+    static bool bIsVariable(std::string sArgument);
+
+    ~CCalculatorTree();
+
+private:
 
     void mhGetIssues(CNode *cCurrent, std::map<char, int> &mErrors);
 
+    int ihRepairTree(CNode *cCurrent);
+
     int ihSearchAndRoot(CNode *cNode, std::string sArg);
+
+    double dMap(std::string sArg, std::map<char, int> &mParameters);
+    double dhCalculate(CNode *cCurrent, std::map<char, int> &mParameters);
+
+    bool bhAdd(CNode *cCurrent, std::string sSymbol);
+
+    bool bhCheckTree(CNode *cCurrent);
+
+    std::string shInfix(CNode *cCurrent);
+    std::string shGetPostfix(CNode *cCurrent);
+    std::string shGetPostfixSpace(CNode *cCurrent);
 };
 
 
