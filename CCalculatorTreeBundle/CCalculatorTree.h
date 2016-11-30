@@ -11,6 +11,7 @@
 
 #include "../CHelpersBundle/CCalculatorHelper.h"
 #include "../CHelpersBundle/CStringHelper.h"
+#include "../CHelpersBundle/HErrors.h"
 
 #include "CNode.h"
 
@@ -51,8 +52,6 @@ private:
 
     bool bhAdd(CNode *cCurrent, std::string sSymbol);
 
-    void vhClean(CNode *cCurrent);
-
     double dhCalculate(CNode *cCurrent, std::map<char, int> &mParameters);
 
     std::string shInfix(CNode *cCurrent);
@@ -68,6 +67,8 @@ private:
     double dMap(std::string sArg, std::map<char, int> &mParameters);
 
     void mhGetIssues(CNode *cCurrent, std::map<char, int> &mErrors);
+
+    int ihSearchAndRoot(CNode *cNode, std::string sArg);
 };
 
 

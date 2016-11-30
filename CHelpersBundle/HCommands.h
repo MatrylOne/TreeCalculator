@@ -12,6 +12,7 @@
 #define COMMAND_SET std::string("set")
 #define COMMAND_FIX std::string("fix")
 #define COMMAND_CALCULATE std::string("calculate")
+#define COMMAND_ROOT std::string("root")
 #define COMMAND_HELP std::string("help")
 #define COMMAND_EXIT std::string("exit")
 
@@ -22,6 +23,7 @@
 #define DEFINITION_SET std::string("Przyjmuje wartości zmiennych :")
 #define DEFINITION_FIX std::string("Naprawia niepoprawne wyrażenie :")
 #define DEFINITION_CALCULATE std::string("Oblicza zadane wyrażenie :")
+#define DEFINITION_ROOT std::string("Zmienia zadany węzeł na rootai usuwa nieużywane węzły :")
 #define DEFINITION_HELP std::string("Pokazuje listę komend :")
 #define DEFINITION_EXIT std::string("Kończy pracę programu :")
 

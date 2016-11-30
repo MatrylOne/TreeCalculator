@@ -57,6 +57,10 @@ double CCalculatorTree::dCalculate(std::map<char, int> &mParameters) {
     return dhCalculate(nRoot, mParameters);
 }
 
+int CCalculatorTree::iSearchAndRoot(std::string sArg) {
+    return ihSearchAndRoot(nRoot, sArg);
+}
+
 int CCalculatorTree::iRepairTree() {
     return ihRepairTree(nRoot);
 }
@@ -180,6 +184,35 @@ int CCalculatorTree::ihRepairTree(CNode *cCurrent) {
     }
 
     return 0;
+}
+
+int CCalculatorTree::ihSearchAndRoot(CNode *cNode, std::string sArg) {
+    if (cNode != nullptr) {
+        if ((cNode->sGetValue() + " ") == sArg) {
+            // Jest już rootem
+            std::cout << "jest juz rootem" << std::endl;
+            return 0;
+        } else {
+            if (cNode->nGetLeft() != nullptr && (cNode->nGetLeft()->sGetValue() + " ") == sArg) {
+                CNode *tmp = cNode->nGetLeft();
+                cNode->vSetLeft(nullptr);
+                vClean();
+                nRoot = tmp;
+                return 0;
+            } else if (cNode->nGetRight() != nullptr && (cNode->nGetRight()->sGetValue() + " ") == sArg) {
+                CNode *tmp = cNode->nGetRight();
+                cNode->vSetRight(nullptr);
+                vClean();
+                nRoot = tmp;
+                return 0;
+            } else {
+                int sReturn = ihSearchAndRoot(cNode->nGetLeft(), sArg);
+                if (sReturn != 0) return ihSearchAndRoot(cNode->nGetRight(), sArg); else return sReturn;
+            }
+        }
+    } else {
+        return NODE_NOT_FOUND;
+    }
 }
 
 //######   Checkers   #######//

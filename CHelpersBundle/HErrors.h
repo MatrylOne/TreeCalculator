@@ -30,6 +30,7 @@
 #define EMPTY_NODE 201
 #define NO_VARIABLES_FOUND 202
 #define MAP_NOT_EMPTY 203
+#define NODE_NOT_FOUND 204
 
 ///////////////////////////
 //////////////////////////

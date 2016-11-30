@@ -54,6 +54,9 @@ int HErrors::vRecognizeError(int iError) {
         case MAP_NOT_EMPTY :
             std::cout << "Mapa parametrów jest już ustawiona." << std::endl;
             break;
+        case NODE_NOT_FOUND :
+            std::cout << "Nie znaleziono szukanego węzła." << std::endl;
+            break;
         default:
             std::cout << "NIEZNANY BŁĄD !!!" << std::endl;
             break;

@@ -42,6 +42,8 @@ public:
 
     int iRepairTree();
 
+    int iSearchAndRoot(std::string sArg);
+
     std::string sSeparateTask(std::string sTask);
 
     bool bCheckTree();

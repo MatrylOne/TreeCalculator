@@ -137,6 +137,10 @@ std::string CCalculatorManager::sSeparateTask(std::string sTask) {
     return sReturn;
 }
 
+int CCalculatorManager::iSearchAndRoot(std::string sArg) {
+    return cCalculatorTree->iSearchAndRoot(sArg);
+}
+
 //######   Printers   #######//
 std::string CCalculatorManager::sPrintVariables() {
     std::string sReturn = "";

@@ -110,6 +110,14 @@ int CCalculatorTreeInterface::iRunCommand(std::string sCommand) {
             }
         }
 
+        if (vArgs[0] == COMMAND_ROOT) {
+            if (vArgs.size() > 1) {
+                return cManager->iSearchAndRoot(CStringHelper::sParseVector(vArgs, 1));
+            } else {
+                return WRONG_NUMBER_OF_ARGUMENTS;
+            }
+        }
+
         if (vArgs[0] == COMMAND_HELP) {
             if (vArgs.size() == 1) {
                 vPrintHelp();
@@ -168,6 +176,9 @@ void CCalculatorTreeInterface::vPrintHelp() {
     std::cout << "" << std::endl;
     std::cout << DEFINITION_CALCULATE << std::endl;
     std::cout << COMMAND_CALCULATE << std::endl;
+    std::cout << "" << std::endl;
+    std::cout << DEFINITION_ROOT << std::endl;
+    std::cout << COMMAND_ROOT << std::endl;
     std::cout << "" << std::endl;
     std::cout << DEFINITION_HELP << std::endl;
     std::cout << COMMAND_HELP << std::endl;
