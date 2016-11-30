@@ -36,23 +36,19 @@ public:
     double dCalculate();
 
     std::string sGetTask();
-
     std::string sGetParsedTask();
-
     std::string sGetTreeTask();
-
     std::string sPrintVariables();
-
     std::string sGetInfix();
     std::string sSeparateTask(std::string sTask);
 
     void vGetIssues(std::map<char, int> &mErrors);
 
     ~CCalculatorManager();
-
 private:
     int iSetMapElement(char cLetter, int iValue);
 
+    int iUpdateTask();
 };
 
 

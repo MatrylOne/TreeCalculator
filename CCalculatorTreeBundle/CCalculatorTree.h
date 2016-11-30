@@ -53,7 +53,6 @@ private:
     void mhGetIssues(CNode *cCurrent, std::map<char, int> &mErrors);
 
     int ihRepairTree(CNode *cCurrent);
-
     int ihSearchAndRoot(CNode *cNode, std::string sArg);
 
     double dMap(std::string sArg, std::map<char, int> &mParameters);

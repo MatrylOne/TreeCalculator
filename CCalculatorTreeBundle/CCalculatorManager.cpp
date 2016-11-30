@@ -109,7 +109,9 @@ int CCalculatorManager::iRepairTree() {
 }
 
 int CCalculatorManager::iSearchAndRoot(std::string sArg) {
-    return cCalculatorTree->iSearchAndRoot(sArg);
+    int iReturn = cCalculatorTree->iSearchAndRoot(sArg);
+    iUpdateTask();
+    return iReturn;
 }
 
 double CCalculatorManager::dCalculate() {
@@ -157,5 +159,10 @@ CCalculatorManager::~CCalculatorManager() {
 
 int CCalculatorManager::iSetMapElement(char cLetter, int iValue) {
     mParameters[cLetter] = iValue;
+    return 0;
+}
+
+int CCalculatorManager::iUpdateTask() {
+    this->sTask = cCalculatorTree->sGetPostfixSpace();
     return 0;
 }
