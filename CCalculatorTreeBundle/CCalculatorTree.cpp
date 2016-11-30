@@ -177,6 +177,8 @@ int CCalculatorTree::ihRepairTree(CNode *cCurrent) {
         } else if (cCurrent->sGetValue() == "~") {
             // Jeśli operatorem jest negacja
             if (cCurrent->nGetRight()->sGetValue() == "") { cCurrent->nGetRight()->vSetValue("0"); }
+        } else if (cCurrent->sGetValue() == "") {
+            cCurrent->vSetValue("0");
         }
         /////////////   Część rekurencyjna   ///////////////
         ihRepairTree(cCurrent->nGetLeft());

@@ -104,7 +104,7 @@ int CCalculatorManager::iFindVariables() {
 
 int CCalculatorManager::iRepairTree() {
     cCalculatorTree->iRepairTree();
-    this->sTask = cCalculatorTree->sGetPostfixSpace();
+    iUpdateTask();
     return 0;
 }
 
