@@ -47,7 +47,6 @@ public:
     ~CCalculatorManager();
 private:
     int iSetMapElement(char cLetter, int iValue);
-
     int iUpdateTask();
 };
 

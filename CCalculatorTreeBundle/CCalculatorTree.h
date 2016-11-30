@@ -56,7 +56,6 @@ private:
     double dhCalculate(CNode *cCurrent, std::map<char, int> &mParameters);
 
     bool bhAdd(CNode *cCurrent, std::string sSymbol);
-
     bool bhCheckTree(CNode *cCurrent);
 
     std::string shInfix(CNode *cCurrent);
