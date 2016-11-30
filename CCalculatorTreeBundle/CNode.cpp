@@ -17,7 +17,7 @@ CNode::CNode(std::string sValue) {
 }
 
 CNode::CNode(CNode &nNode) {
-    std::cout << "copy constructor allert" << std::endl;
+    if (DEBUG) std::cout << "copy constructor allert" << std::endl;
 }
 
 //######    Getters   #######//
@@ -35,8 +35,9 @@ CNode *CNode::nGetRight() const {
 
 //######    Setters   #######//
 void CNode::vSetValue(const std::string sValue) {
-    std::cout << "Ustawiam " + (sGetValue() == "" ? "pusty węzeł" : sGetValue()) + " na " +
-                 (sValue == "" ? "pusty węzeł" : sValue) << std::endl;
+    if (DEBUG)
+        std::cout << "Ustawiam " + (sGetValue() == "" ? "pusty węzeł" : sGetValue()) + " na " +
+                     (sValue == "" ? "pusty węzeł" : sValue) << std::endl;
     this->sValue = sValue;
 }
 
@@ -57,7 +58,7 @@ void CNode::vPrint() {
 CNode::~CNode() {
     if (this->nGetLeft() != nullptr) delete nGetLeft();
     if (this->nGetRight() != nullptr) delete nGetRight();
-    std::cout << "Usuwam " + (sGetValue() == "" ? "pusty węzeł" : sGetValue()) << std::endl;
+    if (DEBUG) std::cout << "Usuwam " + (sGetValue() == "" ? "pusty węzeł" : sGetValue()) << std::endl;
 }
 
 //////////////////////////////////
@@ -69,5 +70,5 @@ void CNode::vConstructor(std::string sValue, CNode *nLeft, CNode *nRight) {
     this->nLeft = nLeft;
     this->nRight = nRight;
 
-    std::cout << "Dodaję " + (sGetValue() == "" ? "pusty węzeł" : sGetValue()) << std::endl;
+    if (DEBUG) std::cout << "Dodaję " + (sGetValue() == "" ? "pusty węzeł" : sGetValue()) << std::endl;
 }

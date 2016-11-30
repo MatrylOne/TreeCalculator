@@ -10,6 +10,7 @@
 #include <map>
 
 #include "../CHelpersBundle/CCalculatorHelper.h"
+#include "../CHelpersBundle/HDefaults.h"
 #include "../CHelpersBundle/CStringHelper.h"
 #include "../CHelpersBundle/HErrors.h"
 

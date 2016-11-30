@@ -190,7 +190,7 @@ int CCalculatorTree::ihSearchAndRoot(CNode *cNode, std::string sArg) {
     if (cNode != nullptr) {
         if ((cNode->sGetValue() + " ") == sArg) {
             // Jest już rootem
-            std::cout << "jest juz rootem" << std::endl;
+            if (DEBUG) std::cout << "jest juz rootem" << std::endl;
             return 0;
         } else {
             if (cNode->nGetLeft() != nullptr && (cNode->nGetLeft()->sGetValue() + " ") == sArg) {

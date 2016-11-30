@@ -7,5 +7,6 @@
 
 #define PROGRAM_VERSION std::string("2.1")
 #define PROGRAM_NAME std::string("KALKULATOR WYRAŻEŃ POSTFIX")
+#define DEBUG false
 
 #endif //SECOND_GEO_HDEFAULTS_H

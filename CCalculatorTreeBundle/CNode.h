@@ -8,6 +8,8 @@
 #include <string>
 #include <iostream>
 
+#include "../CHelpersBundle/HDefaults.h"
+
 class CNode {
 private:
     // Prywatne Pola
