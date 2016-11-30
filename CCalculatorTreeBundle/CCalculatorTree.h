@@ -25,17 +25,14 @@ public:
 
     void vInitialize();
     void vClean();
-
     void mGetIssues(std::map<char, int> &mErrors);
 
     int iRepairTree();
-
     int iSearchAndRoot(std::string sArg);
 
     double dCalculate(std::map<char, int> &mParameters);
 
     bool bAdd(std::string sSymbol);
-
     bool bCheckTree();
 
     CNode *nGetRoot();

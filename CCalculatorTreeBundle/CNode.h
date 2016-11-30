@@ -29,9 +29,7 @@ public:
 
     void vSetValue(const std::string sValue);
     void vSetRight(CNode *nRight);
-
     void vSetLeft(CNode *nLeft);
-
     void vPrint();
 
     ~CNode();
