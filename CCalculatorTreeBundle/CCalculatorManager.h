@@ -14,11 +14,11 @@
 
 #include "CCalculatorTree.h"
 
-class CCalculatorMenager {
+class CCalculatorManager {
 public:
-    CCalculatorMenager();
+    CCalculatorManager();
 
-    ~CCalculatorMenager();
+    ~CCalculatorManager();
 
     std::string sGetTask();
 

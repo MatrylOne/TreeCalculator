@@ -201,8 +201,7 @@ bool CCalculatorTree::bhCheckTree(CNode *cCurrent) {
         if (cCurrent->sGetValue() == "") {
             return false;
         } else {
-            if (bhCheckTree(cCurrent->nGetLeft())) return bhCheckTree(cCurrent->nGetRight());
-            return false;
+            return bhCheckTree(cCurrent->nGetLeft()) && bhCheckTree(cCurrent->nGetRight());
         }
     }
     return true;

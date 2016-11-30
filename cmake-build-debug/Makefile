@@ -123,32 +123,32 @@ ZMPO3/fast:
 	$(MAKE) -f CMakeFiles/ZMPO3.dir/build.make CMakeFiles/ZMPO3.dir/build
 .PHONY : ZMPO3/fast
 
-CCalculatorTreeBundle/CCalculatorMenager.o: CCalculatorTreeBundle/CCalculatorMenager.cpp.o
+CCalculatorTreeBundle/CCalculatorManager.o: CCalculatorTreeBundle/CCalculatorManager.cpp.o
 
-.PHONY : CCalculatorTreeBundle/CCalculatorMenager.o
+.PHONY : CCalculatorTreeBundle/CCalculatorManager.o
 
 # target to build an object file
-CCalculatorTreeBundle/CCalculatorMenager.cpp.o:
-	$(MAKE) -f CMakeFiles/ZMPO3.dir/build.make CMakeFiles/ZMPO3.dir/CCalculatorTreeBundle/CCalculatorMenager.cpp.o
-.PHONY : CCalculatorTreeBundle/CCalculatorMenager.cpp.o
+CCalculatorTreeBundle/CCalculatorManager.cpp.o:
+	$(MAKE) -f CMakeFiles/ZMPO3.dir/build.make CMakeFiles/ZMPO3.dir/CCalculatorTreeBundle/CCalculatorManager.cpp.o
+.PHONY : CCalculatorTreeBundle/CCalculatorManager.cpp.o
 
-CCalculatorTreeBundle/CCalculatorMenager.i: CCalculatorTreeBundle/CCalculatorMenager.cpp.i
+CCalculatorTreeBundle/CCalculatorManager.i: CCalculatorTreeBundle/CCalculatorManager.cpp.i
 
-.PHONY : CCalculatorTreeBundle/CCalculatorMenager.i
+.PHONY : CCalculatorTreeBundle/CCalculatorManager.i
 
 # target to preprocess a source file
-CCalculatorTreeBundle/CCalculatorMenager.cpp.i:
-	$(MAKE) -f CMakeFiles/ZMPO3.dir/build.make CMakeFiles/ZMPO3.dir/CCalculatorTreeBundle/CCalculatorMenager.cpp.i
-.PHONY : CCalculatorTreeBundle/CCalculatorMenager.cpp.i
+CCalculatorTreeBundle/CCalculatorManager.cpp.i:
+	$(MAKE) -f CMakeFiles/ZMPO3.dir/build.make CMakeFiles/ZMPO3.dir/CCalculatorTreeBundle/CCalculatorManager.cpp.i
+.PHONY : CCalculatorTreeBundle/CCalculatorManager.cpp.i
 
-CCalculatorTreeBundle/CCalculatorMenager.s: CCalculatorTreeBundle/CCalculatorMenager.cpp.s
+CCalculatorTreeBundle/CCalculatorManager.s: CCalculatorTreeBundle/CCalculatorManager.cpp.s
 
-.PHONY : CCalculatorTreeBundle/CCalculatorMenager.s
+.PHONY : CCalculatorTreeBundle/CCalculatorManager.s
 
 # target to generate assembly for a file
-CCalculatorTreeBundle/CCalculatorMenager.cpp.s:
-	$(MAKE) -f CMakeFiles/ZMPO3.dir/build.make CMakeFiles/ZMPO3.dir/CCalculatorTreeBundle/CCalculatorMenager.cpp.s
-.PHONY : CCalculatorTreeBundle/CCalculatorMenager.cpp.s
+CCalculatorTreeBundle/CCalculatorManager.cpp.s:
+	$(MAKE) -f CMakeFiles/ZMPO3.dir/build.make CMakeFiles/ZMPO3.dir/CCalculatorTreeBundle/CCalculatorManager.cpp.s
+.PHONY : CCalculatorTreeBundle/CCalculatorManager.cpp.s
 
 CCalculatorTreeBundle/CCalculatorTree.o: CCalculatorTreeBundle/CCalculatorTree.cpp.o
 
@@ -375,9 +375,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ZMPO3"
-	@echo "... CCalculatorTreeBundle/CCalculatorMenager.o"
-	@echo "... CCalculatorTreeBundle/CCalculatorMenager.i"
-	@echo "... CCalculatorTreeBundle/CCalculatorMenager.s"
+	@echo "... CCalculatorTreeBundle/CCalculatorManager.o"
+	@echo "... CCalculatorTreeBundle/CCalculatorManager.i"
+	@echo "... CCalculatorTreeBundle/CCalculatorManager.s"
 	@echo "... CCalculatorTreeBundle/CCalculatorTree.o"
 	@echo "... CCalculatorTreeBundle/CCalculatorTree.i"
 	@echo "... CCalculatorTreeBundle/CCalculatorTree.s"

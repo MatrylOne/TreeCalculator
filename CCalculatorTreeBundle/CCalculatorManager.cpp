@@ -1,45 +1,45 @@
 //
 // Created by Jakub Nadolny on 26.11.2016.
 //
-#include "CCalculatorMenager.h"
+#include "CCalculatorManager.h"
 
 
 /////////////////////////////////
 //////////   Public   ///////////
 
 //######   Constructors  #######//
-CCalculatorMenager::CCalculatorMenager() {
+CCalculatorManager::CCalculatorManager() {
     cCalculatorTree = new CCalculatorTree();
 }
 
 //######   Destructors  #######//
-CCalculatorMenager::~CCalculatorMenager() {
+CCalculatorManager::~CCalculatorManager() {
     delete cCalculatorTree;
 }
 
 //######   Getters   #######//
-std::string CCalculatorMenager::sGetInfix() {
+std::string CCalculatorManager::sGetInfix() {
     return cCalculatorTree->sInfix();
 }
 
-std::string CCalculatorMenager::sGetTreeTask() {
+std::string CCalculatorManager::sGetTreeTask() {
     return cCalculatorTree->sGetPostfix();
 }
 
-std::string CCalculatorMenager::sGetTask() {
+std::string CCalculatorManager::sGetTask() {
     return this->sTask;
 }
 
-std::string CCalculatorMenager::sGetParsedTask() {
+std::string CCalculatorManager::sGetParsedTask() {
     return std::string("TODO - not ended");
 }
 
-void CCalculatorMenager::mGetIssues(std::map<char, int> &mErrors) {
+void CCalculatorManager::mGetIssues(std::map<char, int> &mErrors) {
     cCalculatorTree->mGetIssues(mErrors);
 }
 
 //######   Setters   #######//
-int CCalculatorMenager::iSetTask(std::string sInput) {
+int CCalculatorManager::iSetTask(std::string sInput) {
     std::string sSeparated = sSeparateTask(sInput);
     this->sTask = sSeparated;
     this->sOriginalTask = sSeparated;
@@ -48,7 +48,7 @@ int CCalculatorMenager::iSetTask(std::string sInput) {
     return 0;
 }
 
-int CCalculatorMenager::iSetVariables() {
+int CCalculatorManager::iSetVariables() {
     if (!mParameters.empty()) {
 
         std::string sTextLine = "";
@@ -65,12 +65,12 @@ int CCalculatorMenager::iSetVariables() {
 }
 
 //######   Checkers   #######//
-bool CCalculatorMenager::bCheckTree() {
+bool CCalculatorManager::bCheckTree() {
     return cCalculatorTree->bCheckTree();
 }
 
 //######   Tools   #######//
-int CCalculatorMenager::iConstructTree() {
+int CCalculatorManager::iConstructTree() {
     std::vector<std::string> sArgs = CStringHelper::vSliceString(sTask);
 
     cCalculatorTree->vClean();
@@ -85,11 +85,11 @@ int CCalculatorMenager::iConstructTree() {
     return cCalculatorTree->bCheckTree() ? 0 : EMPTY_NODE;
 }
 
-double CCalculatorMenager::dCalculate() {
+double CCalculatorManager::dCalculate() {
     return cCalculatorTree->dCalculate(mParameters);
 }
 
-int CCalculatorMenager::iFindVariables() {
+int CCalculatorManager::iFindVariables() {
     if (mParameters.empty()) {
         std::vector<std::string> vSlices = CStringHelper::vSliceString(sTask);
 
@@ -111,13 +111,13 @@ int CCalculatorMenager::iFindVariables() {
 
 }
 
-int CCalculatorMenager::iRepairTree() {
+int CCalculatorManager::iRepairTree() {
     cCalculatorTree->iRepairTree();
     this->sTask = cCalculatorTree->sGetPostfixSpace();
     return 0;
 }
 
-std::string CCalculatorMenager::sSeparateTask(std::string sTask) {
+std::string CCalculatorManager::sSeparateTask(std::string sTask) {
     std::vector<std::string> sArgs = CStringHelper::vSliceString(sTask);
     std::string sReturn = "";
 
@@ -138,7 +138,7 @@ std::string CCalculatorMenager::sSeparateTask(std::string sTask) {
 }
 
 //######   Printers   #######//
-std::string CCalculatorMenager::sPrintVariables() {
+std::string CCalculatorManager::sPrintVariables() {
     std::string sReturn = "";
 
     for (std::map<char, int>::iterator it = mParameters.begin(); it != mParameters.end(); it++) {
@@ -151,7 +151,7 @@ std::string CCalculatorMenager::sPrintVariables() {
 //////////////////////////////////
 //////////   Private   ///////////
 
-int CCalculatorMenager::iSetMapElement(char cLetter, int iValue) {
+int CCalculatorManager::iSetMapElement(char cLetter, int iValue) {
     mParameters[cLetter] = iValue;
     return 0;
 }

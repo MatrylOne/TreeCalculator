@@ -80,10 +80,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/matryl1/Develop/ZMPO3/CCalculatorTreeBundle/CCalculatorMenager.cpp">
+		<Unit filename="/Users/matryl1/Develop/ZMPO3/CCalculatorTreeBundle/CCalculatorManager.cpp">
 			<Option target="ZMPO3"/>
 		</Unit>
-		<Unit filename="/Users/matryl1/Develop/ZMPO3/CCalculatorTreeBundle/CCalculatorMenager.h">
+		<Unit filename="/Users/matryl1/Develop/ZMPO3/CCalculatorTreeBundle/CCalculatorManager.h">
 			<Option target="ZMPO3"/>
 		</Unit>
 		<Unit filename="/Users/matryl1/Develop/ZMPO3/CCalculatorTreeBundle/CCalculatorTree.cpp">

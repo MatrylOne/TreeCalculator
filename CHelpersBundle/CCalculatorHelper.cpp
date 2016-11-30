@@ -13,16 +13,16 @@ bool CCalculatorHelper::bIsOperator(std::string sValue) {
 }
 
 //######  Calculations  #######//
-double CCalculatorHelper::dCount(std::string sOperator, double sFirst, double sSecound) {
+double CCalculatorHelper::dCount(std::string sOperator, double sFirst, double sSecond) {
     if (bIsOperator(sOperator)) {
         if (sOperator == "*") {
-            return sFirst * sSecound;
+            return sFirst * sSecond;
         } else if (sOperator == "-") {
-            return sFirst - sSecound;
+            return sFirst - sSecond;
         } else if (sOperator == "+") {
-            return sFirst + sSecound;
+            return sFirst + sSecond;
         } else if (sOperator == "/") {
-            return sFirst / sSecound;
+            return sFirst / sSecond;
         } else if (sOperator == "~") {
             return -1 * sFirst;
         }
@@ -32,25 +32,25 @@ double CCalculatorHelper::dCount(std::string sOperator, double sFirst, double sS
     }
 }
 
-double CCalculatorHelper::dCount(std::string sOperator, std::string sFirst, std::string sSecound) {
-    if (CStringHelper::bIsInt(sFirst) && CStringHelper::bIsInt(sSecound)) {
-        return dCount(sOperator, std::stod(sFirst), std::stod(sSecound));
+double CCalculatorHelper::dCount(std::string sOperator, std::string sFirst, std::string sSecond) {
+    if (CStringHelper::bIsInt(sFirst) && CStringHelper::bIsInt(sSecond)) {
+        return dCount(sOperator, std::stod(sFirst), std::stod(sSecond));
     } else {
         return 0;
     }
 }
 
-double CCalculatorHelper::dCount(std::string sOperator, std::string sFirst, double sSecound) {
+double CCalculatorHelper::dCount(std::string sOperator, std::string sFirst, double sSecond) {
     if (CStringHelper::bIsInt(sFirst)) {
-        return dCount(sOperator, std::stod(sFirst), sSecound);
+        return dCount(sOperator, std::stod(sFirst), sSecond);
     } else {
         return 0;
     }
 }
 
-double CCalculatorHelper::dCount(std::string sOperator, double sFirst, std::string sSecound) {
-    if (CStringHelper::bIsInt(sSecound)) {
-        return dCount(sOperator, sFirst, std::stod(sSecound));
+double CCalculatorHelper::dCount(std::string sOperator, double sFirst, std::string sSecond) {
+    if (CStringHelper::bIsInt(sSecond)) {
+        return dCount(sOperator, sFirst, std::stod(sSecond));
     } else {
         return 0;
     }

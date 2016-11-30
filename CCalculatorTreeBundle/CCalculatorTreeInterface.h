@@ -14,7 +14,7 @@
 #include "../CHelpersBundle/HCommands.h"
 #include "../CHelpersBundle/HDefaults.h"
 
-#include "CCalculatorMenager.h"
+#include "CCalculatorManager.h"
 
 class CCalculatorTreeInterface {
 public:
@@ -36,7 +36,7 @@ public:
 
 private:
     bool bContinue;
-    CCalculatorMenager *cManager;
+    CCalculatorManager *cManager;
 };
 
 

@@ -11,9 +11,7 @@ bool CStringHelper::bIsDouble(const char *cStr) {
     char *endptr = 0;
     strtod(cStr, &endptr);
 
-    if (*endptr != '\0' || endptr == cStr)
-        return false;
-    return true;
+    return !(*endptr != '\0' || endptr == cStr);
 }
 
 bool CStringHelper::bIsInt(char sText) {

@@ -10,7 +10,7 @@
 //######   Constructors #######//
 CCalculatorTreeInterface::CCalculatorTreeInterface() {
     bContinue = true;
-    this->cManager = new CCalculatorMenager();
+    this->cManager = new CCalculatorManager();
 }
 
 //######  Destructors #######//
