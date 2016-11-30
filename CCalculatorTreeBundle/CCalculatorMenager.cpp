@@ -142,7 +142,7 @@ std::string CCalculatorMenager::sPrintVariables() {
     std::string sReturn = "";
 
     for (std::map<char, int>::iterator it = mParameters.begin(); it != mParameters.end(); it++) {
-        sReturn += std::string(1, it->first) + " => " + CStringHelper::sToString(it->second) + '\n';
+        sReturn += std::string(1, it->first) + " --> " + CStringHelper::sToString(it->second) + '\n';
     }
 
     return sReturn;
