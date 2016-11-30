@@ -46,7 +46,7 @@ std::string CCalculatorTree::sInfix() {
 
 //######   Tools   #######//
 void CCalculatorTree::vClean() {
-    vhClean(nRoot);
+    delete nRoot;
 }
 
 void CCalculatorTree::vInitialize() {
@@ -136,15 +136,6 @@ bool CCalculatorTree::bhAdd(CNode *cCurrent, std::string sSymbol) {
         }
     } else {
         return false;
-    }
-}
-
-void CCalculatorTree::vhClean(CNode *cCurrent) {
-    if (cCurrent != nullptr) {
-        vhClean(cCurrent->nGetLeft());
-        vhClean(cCurrent->nGetRight());
-
-        delete cCurrent;
     }
 }
 

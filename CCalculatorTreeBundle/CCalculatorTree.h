@@ -42,6 +42,8 @@ public:
 
     void mGetIssues(std::map<char, int> &mErrors);
 
+    int iSearchAndRoot(std::string sArg);
+
     static bool bIsVariable(std::string sArgument);
 
 private:

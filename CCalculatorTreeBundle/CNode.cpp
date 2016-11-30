@@ -21,10 +21,9 @@ CNode::CNode(CNode &nNode) {
 
 //######    Destructors   #######//
 CNode::~CNode() {
-//    std::cout << "Removing node " + sValue << std::endl;
-    sValue = "";
-    nLeft = nullptr;
-    nRight = nullptr;
+    if (this->nGetLeft() != nullptr) delete nGetLeft();
+    if (this->nGetRight() != nullptr) delete nGetRight();
+    std::cout << "Usuwam " + (sGetValue() == "" ? "pusty węzeł" : sGetValue()) << std::endl;
 }
 
 //######    Getters   #######//
@@ -42,6 +41,8 @@ CNode *CNode::nGetRight() const {
 
 //######    Setters   #######//
 void CNode::vSetValue(const std::string sValue) {
+    std::cout << "Ustawiam " + (sGetValue() == "" ? "pusty węzeł" : sGetValue()) + " na " +
+                 (sValue == "" ? "pusty węzeł" : sValue) << std::endl;
     this->sValue = sValue;
 }
 
@@ -66,4 +67,6 @@ void CNode::vConstructor(std::string sValue, CNode *nLeft, CNode *nRight) {
     this->sValue = sValue;
     this->nLeft = nLeft;
     this->nRight = nRight;
+
+    std::cout << "Dodaję " + (sGetValue() == "" ? "pusty węzeł" : sGetValue()) << std::endl;
 }
