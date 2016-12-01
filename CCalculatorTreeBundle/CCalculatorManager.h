@@ -42,7 +42,9 @@ public:
     std::string sGetInfix();
     std::string sSeparateTask(std::string sTask);
 
-    void vGetIssues(std::map<char, int> &mErrors);
+	void vdONothing();
+
+	void vGetIssues(std::map<char, int> &mErrors);
 
     ~CCalculatorManager();
 private:
