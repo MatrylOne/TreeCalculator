@@ -1,13 +1,8 @@
-//
 // Created by Jakub Nadolny on 25.11.2016.
-//
-
 #include "CNode.h"
 
-/////////////////////////////////
-//////////   Public   ///////////
-
-//######   Constructors #######//
+//  Public
+//  Constructors
 CNode::CNode() {
     vConstructor("", nullptr, nullptr);
 }
@@ -33,7 +28,7 @@ CNode *CNode::nGetRight() const {
     return nRight;
 }
 
-//######    Setters   #######//
+//  Setters
 void CNode::vSetValue(const std::string sValue) {
     if (DEBUG)
         std::cout << "Ustawiam " + (sGetValue() == "" ? "pusty węzeł" : sGetValue()) + " na " +
@@ -49,22 +44,20 @@ void CNode::vSetRight(CNode *nRight) {
     this->nRight = nRight;
 }
 
-//######    Printers   #######//
+//  Printers
 void CNode::vPrint() {
     std::cout << "Node : '" + sValue + "'" << std::endl;
 }
 
-//######    Destructors   #######//
+//  Destructors
 CNode::~CNode() {
     if (this->nGetLeft() != nullptr) delete nGetLeft();
     if (this->nGetRight() != nullptr) delete nGetRight();
     if (DEBUG) std::cout << "Usuwam " + (sGetValue() == "" ? "pusty węzeł" : sGetValue()) << std::endl;
 }
 
-//////////////////////////////////
-//////////   Private   ///////////
-
-//######   Utilities #######//
+//  Private
+//  Utilities
 void CNode::vConstructor(std::string sValue, CNode *nLeft, CNode *nRight) {
     this->sValue = sValue;
     this->nLeft = nLeft;
