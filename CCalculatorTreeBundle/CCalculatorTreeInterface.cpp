@@ -1,11 +1,7 @@
-//
 // Created by Jakub Nadolny on 15.11.2016.
-//
-
 #include "CCalculatorTreeInterface.h"
 
-/////////////////////////////////
-//////////   Public   ///////////
+//  Public
 
 //######   Constructors #######//
 CCalculatorTreeInterface::CCalculatorTreeInterface() {
@@ -13,7 +9,7 @@ CCalculatorTreeInterface::CCalculatorTreeInterface() {
     this->cManager = new CCalculatorManager();
 }
 
-//######  Printers #######//
+//  Printers
 std::string CCalculatorTreeInterface::vPrintErrors() {
     std::map<char, int> mErrors;
     std::string sReturn = "";
@@ -76,7 +72,7 @@ void CCalculatorTreeInterface::vPrintBash() {
     std::cout << std::endl << "#>";
 }
 
-//######  Tools #######//
+//  Tools
 void CCalculatorTreeInterface::vBegin() {
     bContinue = true;
     std::string sTextLine = "";
@@ -93,7 +89,6 @@ void CCalculatorTreeInterface::vBegin() {
 int CCalculatorTreeInterface::iRunCommand(std::string sCommand) {
     std::vector<std::string> vArgs = CStringHelper::vSliceString(sCommand);
     if (vArgs.size() > 0) {
-
         if (vArgs[0] == COMMAND_INPUT) {
             if (vArgs.size() > 1) {
                 cManager->iSetTask(CStringHelper::sParseVector(vArgs, 1));
@@ -202,7 +197,7 @@ int CCalculatorTreeInterface::iRunCommand(std::string sCommand) {
     }
 }
 
-//######  Destructors #######//
+//  Destructors
 CCalculatorTreeInterface::~CCalculatorTreeInterface() {
     delete cManager;
 }
