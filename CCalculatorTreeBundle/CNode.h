@@ -1,7 +1,4 @@
-//
 // Created by Jakub Nadolny on 25.11.2016.
-//
-
 #ifndef ZMPO3_CNODE_H
 #define ZMPO3_CNODE_H
 
@@ -12,7 +9,7 @@
 
 class CNode {
 private:
-    // Prywatne Pola
+    // Private atributes
     std::string sValue;
     CNode *nLeft;
     CNode *nRight;
@@ -38,4 +35,4 @@ private:
     void vConstructor(std::string sValue, CNode *nLeft, CNode *nRight);
 };
 
-#endif //ZMPO3_CNODE_H
+#endif
