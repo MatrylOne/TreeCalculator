@@ -1,2 +1,2 @@
 # TreeCalculator
-Prefix, infix and postfix calculator written in Java
+Prefix, infix and postfix calculator written in C++
