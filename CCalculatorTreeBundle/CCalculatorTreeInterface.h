@@ -1,10 +1,7 @@
-//
 // Created by Jakub Nadolny on 15.11.2016.
-//
 
 #ifndef SECOND_GEO_CTEXTINTERFACE_H
 #define SECOND_GEO_CTEXTINTERFACE_H
-
 
 #include <string>
 #include <vector>
@@ -35,6 +32,5 @@ public:
 
     ~CCalculatorTreeInterface();
 };
-
 
 #endif //SECOND_GEO_CTEXTINTERFACE_H
