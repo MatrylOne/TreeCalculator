@@ -52,5 +52,4 @@ private:
     int iUpdateTask();
 };
 
-
-#endif //ZMPO3_CCALCULATORMENAGER_H
+#endif

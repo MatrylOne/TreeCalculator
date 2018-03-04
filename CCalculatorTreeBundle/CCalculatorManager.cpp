@@ -1,18 +1,14 @@
-//
 // Created by Jakub Nadolny on 26.11.2016.
-//
+
 #include "CCalculatorManager.h"
 
-
-/////////////////////////////////
-//////////   Public   ///////////
-
-//######   Constructors  #######//
+/*###		Public		###*/
+/*		Constructors	*/
 CCalculatorManager::CCalculatorManager() {
 	cCalculatorTree = new CCalculatorTree();
 }
 
-//######   Getters   #######//
+/*######   Getters   #######*/
 std::string CCalculatorManager::sGetInfix() {
 	return cCalculatorTree->sInfix();
 }
@@ -63,12 +59,12 @@ int CCalculatorManager::iSetVariables() {
 	return 0;
 }
 
-//######   Checkers   #######//
+/*   Checkers   */
 bool CCalculatorManager::bCheckTree() {
 	return cCalculatorTree->bCheckTree();
 }
 
-//######   Tools   #######//
+/*   Tools   */
 int CCalculatorManager::iConstructTree() {
 	std::vector<std::string> sArgs = CStringHelper::vSliceString(sTask);
 
@@ -135,11 +131,10 @@ std::string CCalculatorManager::sSeparateTask(std::string sTask) {
 			if (sArgs[i] != "") sReturn += sArgs[i] + " ";
 		}
 	}
-
 	return sReturn;
 }
 
-//######   Printers   #######//
+/*   Printers   */
 std::string CCalculatorManager::sPrintVariables() {
 	std::string sReturn = "";
 
@@ -150,14 +145,12 @@ std::string CCalculatorManager::sPrintVariables() {
 	return sReturn;
 }
 
-//######   Destructors  #######//
+/*   Destructors  */
 CCalculatorManager::~CCalculatorManager() {
 	delete cCalculatorTree;
 }
 
-//////////////////////////////////
-//////////   Private   ///////////
-
+/*###   Private   ###*/
 int CCalculatorManager::iSetMapElement(char cLetter, int iValue) {
 	mParameters[cLetter] = iValue;
 	return 0;

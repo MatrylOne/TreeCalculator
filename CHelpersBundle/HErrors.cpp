@@ -1,6 +1,4 @@
-//
 // Created by Jakub Nadolny on 16.10.2016.
-//
 
 #include "HErrors.h"
 

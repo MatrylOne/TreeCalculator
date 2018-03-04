@@ -1,6 +1,4 @@
-//
 // Created by Jakub Nadolny on 16.10.2016.
-//
 
 #ifndef FIRST_CSTRINGHELPER_H
 #define FIRST_CSTRINGHELPER_H
@@ -23,5 +21,4 @@ public:
     static std::vector<std::string> vSliceString(std::string sText);
 };
 
-
-#endif //FIRST_CSTRINGHELPER_H
+#endif

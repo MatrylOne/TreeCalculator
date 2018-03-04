@@ -1,18 +1,14 @@
-//
 // Created by Jakub Nadolny on 25.11.2016.
-//
 
 #include "CCalculatorHelper.h"
 
-/////////////////////////////////
-//////////   Static   ///////////
-
-//######  Checkers  #######//
+////      Static      ////
+/*      Checkers        */
 bool CCalculatorHelper::bIsOperator(std::string sValue) {
     return sValue == "+" || sValue == "-" || sValue == "*" || sValue == "/" || sValue == "~";
 }
 
-//######  Calculations  #######//
+/*      Calculations        */
 double CCalculatorHelper::dCount(std::string sOperator, double sFirst, double sSecond) {
     if (bIsOperator(sOperator)) {
         if (sOperator == "*") {

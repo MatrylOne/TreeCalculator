@@ -1,16 +1,11 @@
-//
 // Created by Jakub Nadolny on 16.10.2016.
-//
 
 #ifndef FIRST_HERRORS_H
 #define FIRST_HERRORS_H
 
 #include <iostream>
 
-///////////////////////////
-//////////////////////////
 // Numbers errors
-
 #define NUMBER_OUT_OF_RANGE 1
 #define NUMBER_IS_NEGATIVE 2
 #define NUMBER_NOT_POSITIVE 3
@@ -32,12 +27,11 @@
 #define MAP_NOT_EMPTY 203
 #define NODE_NOT_FOUND 204
 
-///////////////////////////
-///////////////////////////
+/*/////////////////////////*/
 
 class HErrors {
 public :
     static int vRecognizeError(int iError);
 };
 
-#endif //FIRST_HERRORS_H
+#endif

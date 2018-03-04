@@ -1,16 +1,13 @@
-//
 // Created by Jakub Nadolny on 16.10.2016.
-//
+
 #include "CStringHelper.h"
 
-/////////////////////////////////
-//////////   Static   ///////////
+///   Static   ///
 
-//######   Checkers #######//
+/*   Checkers */
 bool CStringHelper::bIsDouble(const char *cStr) {
     char *endptr = 0;
     strtod(cStr, &endptr);
-
     return !(*endptr != '\0' || endptr == cStr);
 }
 
@@ -26,7 +23,7 @@ bool CStringHelper::bIsInt(std::string sText) {
     return !sText.empty() && it == sText.end();
 }
 
-//######   Converters #######//
+/*      Converters     */
 std::string CStringHelper::sToString(int iNumber) {
     std::stringstream ss;
     ss << iNumber;
@@ -40,7 +37,7 @@ std::string CStringHelper::sDoubleToString(double dNumber) {
     return sstream.str();
 }
 
-//######   Tools #######//
+/*      Tools       */
 std::vector<std::string> CStringHelper::vSliceString(std::string sText) {
     std::vector<std::string> vSlices;
     std::stringstream ss(sText);

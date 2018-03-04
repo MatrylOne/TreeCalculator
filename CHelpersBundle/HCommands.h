@@ -1,6 +1,4 @@
-//
 // Created by Jakub Nadolny on 26.11.2016.
-//
 
 #ifndef ZMPO3_HCOMMANDS_H
 #define ZMPO3_HCOMMANDS_H
@@ -30,4 +28,4 @@
 class HCommands {
 };
 
-#endif //ZMPO3_HCOMMANDS_H
+#endif
